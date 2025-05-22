@@ -15,99 +15,99 @@ const PhotoGrid = () => {
   const photos: Photo[] = [
     {
       id: '1',
-      url: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&h=600&fit=crop',
-      alt: 'Woman sitting on a bed using a laptop',
+      url: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=800&fit=crop',
+      alt: 'Portrait of woman with short blonde hair',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Emily Chen'
     },
     {
       id: '2',
-      url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop',
-      alt: 'Woman in white long sleeve shirt using black laptop computer',
+      url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=800&fit=crop',
+      alt: 'Portrait of woman with dark hair',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Sophie Williams'
     },
     {
       id: '3',
-      url: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=600&fit=crop',
-      alt: 'Man in black and white checkered dress shirt',
+      url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop',
+      alt: 'Portrait of a young man',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Marcus Johnson'
     },
     {
       id: '4',
-      url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop',
-      alt: 'People sitting near table with laptops',
+      url: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&h=800&fit=crop',
+      alt: 'Portrait of smiling woman',
       width: 800,
-      height: 600,
-      name: 'Team Meeting'
+      height: 800,
+      name: 'Amelia Hart'
     },
     {
       id: '5',
-      url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
-      alt: 'Group of people working on laptops at table',
+      url: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&h=800&fit=crop',
+      alt: 'Portrait of man looking serious',
       width: 800,
-      height: 600,
-      name: 'Study Group'
+      height: 800,
+      name: 'Jason Lee'
     },
     {
       id: '6',
-      url: 'https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=800&h=600&fit=crop',
-      alt: 'Smiling young woman with headphones',
+      url: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=800&fit=crop',
+      alt: 'Portrait of woman with red hair',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Olivia Taylor'
     },
     {
       id: '7',
-      url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
-      alt: 'Portrait of a young man in a black t-shirt',
+      url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=800&fit=crop',
+      alt: 'Portrait of smiling man',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'David Rodriguez'
     },
     {
       id: '8',
-      url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop',
-      alt: 'Woman standing and smiling at camera',
+      url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&h=800&fit=crop',
+      alt: 'Portrait of woman with glasses',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Nia Patel'
     },
     {
       id: '9',
-      url: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=800&h=600&fit=crop',
-      alt: 'Woman with curly hair looking at camera',
+      url: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop',
+      alt: 'Portrait of woman with curly hair',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Zoe Martinez'
     },
     {
       id: '10',
-      url: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&h=600&fit=crop',
-      alt: 'Smiling man in gray shirt',
+      url: 'https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800&h=800&fit=crop',
+      alt: 'Portrait of serious man',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Alex Thompson'
     },
     {
       id: '11',
-      url: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop',
-      alt: 'Woman with sunglasses and hat',
+      url: 'https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=800&h=800&fit=crop',
+      alt: 'Portrait of woman with dark hair',
       width: 800,
-      height: 600,
+      height: 800,
       name: 'Jasmine Kim'
     },
     {
       id: '12',
-      url: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=800&h=600&fit=crop',
-      alt: 'Group of friends laughing together',
+      url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=800&fit=crop',
+      alt: 'Portrait of smiling woman',
       width: 800,
-      height: 600,
-      name: 'Friend Group'
+      height: 800,
+      name: 'Claire Wilson'
     }
   ];
 
