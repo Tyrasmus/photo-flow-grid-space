@@ -112,32 +112,35 @@ const PhotoGrid = () => {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {photos.map((photo) => (
-          <div
-            key={photo.id}
-            className="relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            <div className="relative">
-              <AspectRatio ratio={4/3}>
-                <img
-                  src={photo.url}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </AspectRatio>
-              
-              {/* Name overlay positioned in bottom third */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4">
-                <p className="text-white text-lg font-medium ml-2">
-                  {photo.name}
-                </p>
+    <div className="w-full mx-auto py-8">
+      {/* Custom container with responsive margins */}
+      <div className="mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {photos.map((photo) => (
+            <div
+              key={photo.id}
+              className="relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="relative">
+                <AspectRatio ratio={4/3}>
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+                
+                {/* Name overlay positioned in bottom third */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4">
+                  <p className="text-white text-lg font-medium ml-2">
+                    {photo.name}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
