@@ -122,7 +122,7 @@ const PhotoGrid = () => {
               className="relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <div className="relative">
-                <AspectRatio ratio={4/3}>
+                <AspectRatio ratio={2/3}>
                   <img
                     src={photo.url}
                     alt={photo.alt}
