@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Photo {
   id: string;
@@ -80,25 +81,39 @@ const PhotoGrid = () => {
       alt: 'Colorful software or web code on a computer monitor',
       width: 800,
       height: 600
+    },
+    {
+      id: '11',
+      url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
+      alt: 'Person coding on laptop',
+      width: 800,
+      height: 600
+    },
+    {
+      id: '12',
+      url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
+      alt: 'Code on a computer screen',
+      width: 800,
+      height: 600
     }
   ];
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {photos.map((photo) => (
           <div
             key={photo.id}
             className="group relative overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <div className="aspect-[4/3] overflow-hidden">
+            <AspectRatio ratio={4/3}>
               <img
                 src={photo.url}
                 alt={photo.alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 loading="lazy"
               />
-            </div>
+            </AspectRatio>
             
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

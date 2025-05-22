@@ -12,8 +12,8 @@ const Index = () => {
               Responsive Photo Grid
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A beautiful, responsive grid layout that maintains consistent spacing 
-              and adapts seamlessly across all device sizes.
+              A beautiful, responsive grid that displays 6 columns on large screens while 
+              maintaining consistent photo sizes with the same aspect ratio.
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-gray-500">
-              Grid automatically adjusts from 1 column on mobile to 4 columns on desktop
+              Grid automatically adjusts from 2 columns on mobile to 6 columns on desktop
             </p>
           </div>
         </div>
