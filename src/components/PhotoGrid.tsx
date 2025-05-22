@@ -21,78 +21,78 @@ const PhotoGrid = () => {
     },
     {
       id: '2',
-      url: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop',
-      alt: 'Turned on gray laptop computer',
-      width: 800,
-      height: 600
-    },
-    {
-      id: '3',
-      url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop',
-      alt: 'Macro photography of black circuit board',
-      width: 800,
-      height: 600
-    },
-    {
-      id: '4',
-      url: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
-      alt: 'Monitor showing Java programming',
-      width: 800,
-      height: 600
-    },
-    {
-      id: '5',
-      url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop',
-      alt: 'Person using MacBook Pro',
-      width: 800,
-      height: 600
-    },
-    {
-      id: '6',
       url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop',
       alt: 'Woman in white long sleeve shirt using black laptop computer',
       width: 800,
       height: 600
     },
     {
+      id: '3',
+      url: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=600&fit=crop',
+      alt: 'Man in black and white checkered dress shirt',
+      width: 800,
+      height: 600
+    },
+    {
+      id: '4',
+      url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop',
+      alt: 'People sitting near table with laptops',
+      width: 800,
+      height: 600
+    },
+    {
+      id: '5',
+      url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
+      alt: 'Group of people working on laptops at table',
+      width: 800,
+      height: 600
+    },
+    {
+      id: '6',
+      url: 'https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=800&h=600&fit=crop',
+      alt: 'Smiling young woman with headphones',
+      width: 800,
+      height: 600
+    },
+    {
       id: '7',
-      url: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop',
-      alt: 'White robot near brown wall',
+      url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
+      alt: 'Portrait of a young man in a black t-shirt',
       width: 800,
       height: 600
     },
     {
       id: '8',
-      url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop',
-      alt: 'Matrix movie still',
+      url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop',
+      alt: 'Woman standing and smiling at camera',
       width: 800,
       height: 600
     },
     {
       id: '9',
-      url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=600&fit=crop',
-      alt: 'Gray and black laptop computer on surface',
+      url: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=800&h=600&fit=crop',
+      alt: 'Woman with curly hair looking at camera',
       width: 800,
       height: 600
     },
     {
       id: '10',
-      url: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop',
-      alt: 'Colorful software or web code on a computer monitor',
+      url: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&h=600&fit=crop',
+      alt: 'Smiling man in gray shirt',
       width: 800,
       height: 600
     },
     {
       id: '11',
-      url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
-      alt: 'Person coding on laptop',
+      url: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop',
+      alt: 'Woman with sunglasses and hat',
       width: 800,
       height: 600
     },
     {
       id: '12',
-      url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
-      alt: 'Code on a computer screen',
+      url: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=800&h=600&fit=crop',
+      alt: 'Group of friends laughing together',
       width: 800,
       height: 600
     }
