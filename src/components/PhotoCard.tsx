@@ -50,7 +50,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, isAnimating, onPinToggle }
             onPinToggle(photo.id);
           }}
           className={cn(
-            "absolute top-2 left-3 bg-gray-900/70 p-1.5 rounded-full transition-opacity duration-200",
+            "absolute top-2 left-4 bg-gray-900/70 p-1.5 rounded-full transition-opacity duration-200",
             photo.pinned 
               ? "opacity-100 text-white hover:bg-gray-800/90" 
               : "opacity-0 group-hover:opacity-100 text-gray-300 hover:text-white hover:bg-gray-800/90"
@@ -62,7 +62,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, isAnimating, onPinToggle }
         
         {/* Name overlay positioned with the same left margin as the pin icon */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4">
-          <p className="text-white text-lg font-medium ml-3">
+          <p className="text-white text-lg font-medium ml-4">
             {photo.name}
           </p>
         </div>
