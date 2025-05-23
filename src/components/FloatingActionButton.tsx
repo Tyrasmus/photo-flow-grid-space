@@ -22,6 +22,7 @@ const FloatingActionButton = ({
           className="absolute inset-0 w-full h-full" 
           viewBox="0 0 56 56" 
           fill="none"
+          preserveAspectRatio="xMidYMid meet"
         >
           {/* Define gradient */}
           <defs>
@@ -44,7 +45,8 @@ const FloatingActionButton = ({
         
         {/* Button content */}
         <Button 
-          className="absolute inset-0 h-14 w-14 p-0 flex items-center justify-center bg-transparent hover:bg-transparent shadow-lg group"
+          className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent shadow-lg group"
+          style={{ width: "56px", height: "56px" }}
           size="icon"
           variant="ghost"
           onClick={onClick}
