@@ -32,9 +32,9 @@ const FloatingActionButton = ({
             </linearGradient>
           </defs>
           
-          {/* Gradient outline with consistently curved squircle on all sides */}
+          {/* Gradient outline with moderately curved squircle */}
           <path
-            d="M28 4C35 4 42 6 46 10C50 14 52 21 52 28C52 35 50 42 46 46C42 50 35 52 28 52C21 52 14 50 10 46C6 42 4 35 4 28C4 21 6 14 10 10C14 6 21 4 28 4Z"
+            d="M28 4C35 4 41 5 45 9C49 13 52 20 52 28C52 36 49 43 45 47C41 51 35 52 28 52C21 52 15 51 11 47C7 43 4 36 4 28C4 20 7 13 11 9C15 5 21 4 28 4Z"
             stroke="url(#gradient)"
             strokeWidth="2"
             fill="rgb(243 244 246)"
