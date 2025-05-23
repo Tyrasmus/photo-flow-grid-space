@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PhotoCard, { Photo } from './PhotoCard';
 import { photoAnimations } from '@/utils/animations';
 import { Plus } from 'lucide-react';
-import FloatingActionButton from './FloatingActionButton';
 
 const PhotoGrid = () => {
   const [photos, setPhotos] = useState<Photo[]>([
@@ -163,8 +162,7 @@ const PhotoGrid = () => {
         </div>
       </div>
       
-      {/* Using the isolated FloatingActionButton component */}
-      <FloatingActionButton icon={Plus} />
+      {/* Removed the FloatingActionButton component reference */}
       
       {/* Add animations using style tag */}
       <style>

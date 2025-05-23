@@ -1,0 +1,25 @@
+
+{
+  "name": "floating-action-button",
+  "version": "1.0.0",
+  "description": "A beautiful floating action button component for React",
+  "main": "FloatingActionButton.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "floating-action-button",
+    "ui",
+    "tailwindcss"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "lucide-react": "^0.260.0 || ^0.300.0 || ^0.400.0 || ^0.450.0",
+    "tailwindcss": "^3.0.0"
+  }
+}
