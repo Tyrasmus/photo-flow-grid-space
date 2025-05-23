@@ -1,6 +1,9 @@
+
 import React, { useState } from 'react';
 import PhotoCard, { Photo } from './PhotoCard';
 import { photoAnimations } from '@/utils/animations';
+import { Plus } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const PhotoGrid = () => {
   const [photos, setPhotos] = useState<Photo[]>([
@@ -146,7 +149,7 @@ const PhotoGrid = () => {
   });
 
   return (
-    <div className="w-full mx-auto py-4">
+    <div className="w-full mx-auto py-4 relative">
       {/* Custom container with responsive margins */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[12px] xs:gap-5 md:gap-[20px] xl:gap-[40px] 2xl:gap-[48px]">
@@ -160,6 +163,14 @@ const PhotoGrid = () => {
           ))}
         </div>
       </div>
+      
+      {/* Floating Action Button */}
+      <Button 
+        className="fixed bottom-6 right-6 rounded-full shadow-lg h-14 w-14 p-0 flex items-center justify-center z-10"
+        size="icon"
+      >
+        <Plus className="h-6 w-6" />
+      </Button>
       
       {/* Add animations using style tag */}
       <style>
