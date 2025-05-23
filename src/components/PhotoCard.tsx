@@ -43,26 +43,28 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, isAnimating, onPinToggle }
           />
         </AspectRatio>
         
-        {/* Pin icon - aligned with consistent left margin */}
-        <button 
-          onClick={(e) => {
-            e.stopPropagation();
-            onPinToggle(photo.id);
-          }}
-          className={cn(
-            "absolute top-2 left-4 bg-gray-900/70 p-1.5 rounded-full transition-opacity duration-200",
-            photo.pinned 
-              ? "opacity-100 text-white hover:bg-gray-800/90" 
-              : "opacity-0 group-hover:opacity-100 text-gray-300 hover:text-white hover:bg-gray-800/90"
-          )}
-          aria-label={photo.pinned ? "Unpin" : "Pin"}
-        >
-          <Pin size={16} className={cn("transition-transform", photo.pinned && "fill-current")} />
-        </button>
+        {/* Pin icon with consistent padding */}
+        <div className="absolute top-0 left-0 w-full p-3">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onPinToggle(photo.id);
+            }}
+            className={cn(
+              "bg-gray-900/70 p-1.5 rounded-full transition-opacity duration-200",
+              photo.pinned 
+                ? "opacity-100 text-white hover:bg-gray-800/90" 
+                : "opacity-0 group-hover:opacity-100 text-gray-300 hover:text-white hover:bg-gray-800/90"
+            )}
+            aria-label={photo.pinned ? "Unpin" : "Pin"}
+          >
+            <Pin size={16} className={cn("transition-transform", photo.pinned && "fill-current")} />
+          </button>
+        </div>
         
-        {/* Name overlay positioned with the same left margin as the pin icon */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4">
-          <p className="text-white text-lg font-medium ml-4">
+        {/* Name overlay with consistent padding to match the pin container */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-3">
+          <p className="text-white text-lg font-medium">
             {photo.name}
           </p>
         </div>
