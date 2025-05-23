@@ -214,8 +214,9 @@ const PhotoGrid = () => {
         </div>
       </div>
       
-      {/* Add animations to global styles */}
-      <style jsx global>{`
+      {/* Add animations using regular style tag */}
+      <style>
+        {`
         @keyframes slideInFade {
           0% {
             opacity: 0;
@@ -243,7 +244,8 @@ const PhotoGrid = () => {
         .animate-photo-appear {
           animation: photoAppear 0.4s ease-out forwards;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
