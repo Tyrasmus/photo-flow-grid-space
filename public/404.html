@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    var pathSegmentsToKeep = 1;
+
+    var l = window.location;
+    var segmentCount = l.pathname.split('/').length;
+    var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+    redirectUrl += '/photo-flow-grid-space/';
+    
+    // Add the remaining path segments if there are any
+    if (segmentCount > pathSegmentsToKeep + 1) {
+      redirectUrl += l.pathname.split('/').slice(pathSegmentsToKeep + 1).join('/');
+    }
+    
+    // Preserve query parameters and hash
+    redirectUrl += l.search || '';
+    redirectUrl += l.hash || '';
+    
+    document.write('<meta http-equiv="refresh" content="0;URL=' + redirectUrl + '">');
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <a href="/photo-flow-grid-space/">Click here if you are not redirected automatically</a>
+</body>
+</html>
