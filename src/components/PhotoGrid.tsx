@@ -1,6 +1,7 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Pin } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Photo {
   id: string;
@@ -8,18 +9,20 @@ interface Photo {
   alt: string;
   width: number;
   height: number;
-  name?: string; // Adding optional name field
+  name?: string;
+  pinned?: boolean;
 }
 
 const PhotoGrid = () => {
-  const photos: Photo[] = [
+  const [photos, setPhotos] = useState<Photo[]>([
     {
       id: '1',
       url: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=800&fit=crop',
       alt: 'Portrait of woman with short blonde hair',
       width: 800,
       height: 800,
-      name: 'Emily Chen'
+      name: 'Emily Chen',
+      pinned: false
     },
     {
       id: '2',
@@ -27,7 +30,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of woman with dark hair',
       width: 800,
       height: 800,
-      name: 'Sophie Williams'
+      name: 'Sophie Williams',
+      pinned: false
     },
     {
       id: '3',
@@ -35,7 +39,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of a young man',
       width: 800,
       height: 800,
-      name: 'Marcus Johnson'
+      name: 'Marcus Johnson',
+      pinned: false
     },
     {
       id: '4',
@@ -43,7 +48,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of smiling woman',
       width: 800,
       height: 800,
-      name: 'Amelia Hart'
+      name: 'Amelia Hart',
+      pinned: false
     },
     {
       id: '5',
@@ -51,7 +57,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of man looking serious',
       width: 800,
       height: 800,
-      name: 'Jason Lee'
+      name: 'Jason Lee',
+      pinned: false
     },
     {
       id: '6',
@@ -59,7 +66,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of woman with red hair',
       width: 800,
       height: 800,
-      name: 'Olivia Taylor'
+      name: 'Olivia Taylor',
+      pinned: false
     },
     {
       id: '7',
@@ -67,7 +75,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of smiling man',
       width: 800,
       height: 800,
-      name: 'David Rodriguez'
+      name: 'David Rodriguez',
+      pinned: false
     },
     {
       id: '8',
@@ -75,7 +84,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of woman with glasses',
       width: 800,
       height: 800,
-      name: 'Nia Patel'
+      name: 'Nia Patel',
+      pinned: false
     },
     {
       id: '9',
@@ -83,7 +93,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of woman with curly hair',
       width: 800,
       height: 800,
-      name: 'Zoe Martinez'
+      name: 'Zoe Martinez',
+      pinned: false
     },
     {
       id: '10',
@@ -91,7 +102,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of serious man',
       width: 800,
       height: 800,
-      name: 'Alex Thompson'
+      name: 'Alex Thompson',
+      pinned: false
     },
     {
       id: '11',
@@ -99,7 +111,8 @@ const PhotoGrid = () => {
       alt: 'Portrait of woman with dark hair',
       width: 800,
       height: 800,
-      name: 'Jasmine Kim'
+      name: 'Jasmine Kim',
+      pinned: false
     },
     {
       id: '12',
@@ -107,16 +120,32 @@ const PhotoGrid = () => {
       alt: 'Portrait of smiling woman',
       width: 800,
       height: 800,
-      name: 'Claire Wilson'
+      name: 'Claire Wilson',
+      pinned: false
     }
-  ];
+  ]);
+
+  const togglePin = (id: string) => {
+    setPhotos(prevPhotos =>
+      prevPhotos.map(photo =>
+        photo.id === id ? { ...photo, pinned: !photo.pinned } : photo
+      )
+    );
+  };
+
+  // Sort photos to show pinned ones first
+  const sortedPhotos = [...photos].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return 0;
+  });
 
   return (
     <div className="w-full mx-auto py-4">
       {/* Custom container with responsive margins */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[12px] xs:gap-5 md:gap-[20px] xl:gap-[40px] 2xl:gap-[48px]">
-          {photos.map((photo) => (
+          {sortedPhotos.map((photo) => (
             <div
               key={photo.id}
               className="relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
@@ -130,6 +159,23 @@ const PhotoGrid = () => {
                     loading="lazy"
                   />
                 </AspectRatio>
+                
+                {/* Pin icon */}
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    togglePin(photo.id);
+                  }}
+                  className={cn(
+                    "absolute top-2 left-2 bg-gray-900/70 p-1.5 rounded-full transition-opacity duration-200",
+                    photo.pinned 
+                      ? "opacity-100 text-white hover:bg-gray-800/90" 
+                      : "opacity-0 group-hover:opacity-100 text-gray-300 hover:text-white hover:bg-gray-800/90"
+                  )}
+                  aria-label={photo.pinned ? "Unpin" : "Pin"}
+                >
+                  <Pin size={16} className={cn("transition-transform", photo.pinned && "fill-current")} />
+                </button>
                 
                 {/* Name overlay positioned in bottom third */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4">
