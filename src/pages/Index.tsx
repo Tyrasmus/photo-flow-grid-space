@@ -15,12 +15,12 @@ const Index = () => {
           
           <div className="flex gap-2">
             <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0">
-              <GitMerge className="mr-2" />
-              Merge People
+              <GitMerge className="mr-2 xs:mr-0" />
+              <span className="hidden xs:inline">Merge People</span>
             </Button>
             <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0">
-              <Eye className="mr-2" />
-              Show/hide People
+              <Eye className="mr-2 xs:mr-0" />
+              <span className="hidden xs:inline">Show/hide People</span>
             </Button>
           </div>
         </div>
