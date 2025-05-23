@@ -164,17 +164,32 @@ const PhotoGrid = () => {
         </div>
       </div>
       
-      {/* Floating Action Button with smooth squircle shape */}
-      <Button 
-        className="fixed bottom-6 right-6 h-14 w-14 p-0 flex items-center justify-center z-10 bg-gray-100 hover:bg-gray-200 shadow-lg"
-        style={{
-          borderRadius: '20% 20% 20% 20% / 20% 20% 20% 20%'
-        }}
-        size="icon"
-        variant="ghost"
-      >
-        <Plus className="h-6 w-6 text-gray-600" />
-      </Button>
+      {/* Floating Action Button with SVG squircle shape */}
+      <div className="fixed bottom-6 right-6 z-10">
+        <div className="relative h-14 w-14">
+          {/* SVG squircle background */}
+          <svg 
+            className="absolute inset-0 w-full h-full" 
+            viewBox="0 0 56 56" 
+            fill="none"
+          >
+            <path
+              d="M28 4C37.333 4 44.667 4 48 7.333C51.333 10.667 52 18 52 28C52 38 51.333 45.333 48 48.667C44.667 52 37.333 52 28 52C18 52 10.667 51.333 7.333 48C4 44.667 4 37.333 4 28C4 18.667 4 11.333 7.333 8C10.667 4.667 18 4 28 4Z"
+              fill="rgb(243 244 246)"
+              className="transition-colors duration-200 group-hover:fill-gray-200"
+            />
+          </svg>
+          
+          {/* Button content */}
+          <Button 
+            className="absolute inset-0 h-14 w-14 p-0 flex items-center justify-center bg-transparent hover:bg-transparent shadow-lg group"
+            size="icon"
+            variant="ghost"
+          >
+            <Plus className="h-6 w-6 text-gray-600" />
+          </Button>
+        </div>
+      </div>
       
       {/* Add animations using style tag */}
       <style>
