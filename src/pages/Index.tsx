@@ -1,20 +1,33 @@
 
 import PhotoGrid from '../components/PhotoGrid';
+import { Button } from "@/components/ui/button";
+import { Eye, GitMerge } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Simple Header - aligned with photo grid */}
+      {/* Header with buttons */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
-        <h1 className="text-4xl font-bold text-gray-900 pt-12 pb-6">
-          People
-        </h1>
+        <div className="flex justify-between items-center pt-12 pb-6">
+          <h1 className="text-4xl font-bold text-gray-900">
+            People
+          </h1>
+          
+          <div className="flex gap-2">
+            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0">
+              <GitMerge className="mr-2" />
+              Merge People
+            </Button>
+            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0">
+              <Eye className="mr-2" />
+              Show/hide People
+            </Button>
+          </div>
+        </div>
       </div>
 
       {/* Photo Grid Section */}
       <PhotoGrid />
-
-      {/* Footer Section - removing this as part of simplifying the page */}
     </div>
   );
 };
