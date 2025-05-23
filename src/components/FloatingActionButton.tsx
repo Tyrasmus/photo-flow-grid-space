@@ -35,7 +35,7 @@ const FloatingActionButton = ({
           
           {/* Gradient outline with balanced curvature on all sides */}
           <path
-            d="M28 10C32 10 36 10.5 40 13.5C43.5 17 45 22 45 28C45 34 43.5 39 40 42.5C36 45.5 32 46 28 46C24 46 20 45.5 16 42.5C12.5 39 11 34 11 28C11 22 12.5 17 16 13.5C20 10.5 24 10 28 10Z"
+            d="M28 8C34 8 40 8.5 43 11.5C46.5 15 48 20 48 28C48 36 46.5 41 43 44.5C40 47.5 34 48 28 48C22 48 16 47.5 13 44.5C9.5 41 8 36 8 28C8 20 9.5 15 13 11.5C16 8.5 22 8 28 8Z"
             stroke="url(#gradient)"
             strokeWidth="2"
             fill="rgb(243 244 246)"
