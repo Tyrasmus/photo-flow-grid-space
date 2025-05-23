@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/photo-flow-grid-space/',
+  base: mode === 'production' ? '/photo-flow-grid-space/' : '/',
   server: {
     host: "::",
     port: 8080,
