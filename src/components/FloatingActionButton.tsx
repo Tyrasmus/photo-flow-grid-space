@@ -51,7 +51,7 @@ const FloatingActionButton = ({
           variant="ghost"
           onClick={onClick}
         >
-          <Icon className="h-7 w-7 text-gray-600" />
+          <Icon className="h-7 w-7 text-gray-600" strokeWidth={3} />
         </Button>
       </div>
     </div>
