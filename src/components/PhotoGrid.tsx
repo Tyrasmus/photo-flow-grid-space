@@ -164,9 +164,12 @@ const PhotoGrid = () => {
         </div>
       </div>
       
-      {/* Floating Action Button without gradient */}
+      {/* Floating Action Button with squircle shape */}
       <Button 
-        className="fixed bottom-6 right-6 h-14 w-14 p-0 flex items-center justify-center z-10 bg-gray-100 hover:bg-gray-200 rounded-[22px] shadow-lg"
+        className="fixed bottom-6 right-6 h-14 w-14 p-0 flex items-center justify-center z-10 bg-gray-100 hover:bg-gray-200 shadow-lg"
+        style={{
+          clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
+        }}
         size="icon"
         variant="ghost"
       >
