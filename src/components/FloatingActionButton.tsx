@@ -19,7 +19,7 @@ const FloatingActionButton = ({
       <div className="relative h-14 w-14">
         {/* SVG squircle background with gradient outline */}
         <svg 
-          className="absolute inset-0 w-full h-full" 
+          className="absolute inset-0 w-full h-full drop-shadow-lg" 
           viewBox="0 0 56 56" 
           fill="none"
           preserveAspectRatio="xMidYMid meet"
@@ -45,7 +45,7 @@ const FloatingActionButton = ({
         
         {/* Button content */}
         <Button 
-          className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent shadow-lg group"
+          className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent group"
           style={{ width: "56px", height: "56px" }}
           size="icon"
           variant="ghost"
