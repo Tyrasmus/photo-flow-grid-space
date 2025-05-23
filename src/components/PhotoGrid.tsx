@@ -166,10 +166,11 @@ const PhotoGrid = () => {
       
       {/* Floating Action Button */}
       <Button 
-        className="fixed bottom-6 right-6 rounded-full shadow-lg h-14 w-14 p-0 flex items-center justify-center z-10"
+        className="fixed bottom-6 right-6 h-14 w-14 p-0 flex items-center justify-center z-10 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow-lg border-2 border-transparent bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-border before:content-[''] before:absolute before:inset-[2px] before:bg-gray-100 before:rounded-xl before:z-[-1]"
         size="icon"
+        variant="ghost"
       >
-        <Plus className="h-6 w-6" />
+        <Plus className="h-6 w-6 text-purple-600 relative z-10" />
       </Button>
       
       {/* Add animations using style tag */}
