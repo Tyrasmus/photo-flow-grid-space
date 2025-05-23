@@ -14,12 +14,12 @@ const Index = () => {
           </h1>
           
           <div className="flex gap-2">
-            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0">
-              <GitMerge className="mr-2 xs:mr-0" />
+            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
+              <GitMerge className="xs:mr-2" />
               <span className="hidden xs:inline">Merge People</span>
             </Button>
-            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0">
-              <Eye className="mr-2 xs:mr-0" />
+            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
+              <Eye className="xs:mr-2" />
               <span className="hidden xs:inline">Show/hide People</span>
             </Button>
           </div>
