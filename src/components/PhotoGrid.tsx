@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PhotoCard, { Photo } from './PhotoCard';
 import { photoAnimations } from '@/utils/animations';
@@ -164,9 +163,9 @@ const PhotoGrid = () => {
         </div>
       </div>
       
-      {/* Floating Action Button */}
+      {/* Floating Action Button with softer curves */}
       <Button 
-        className="fixed bottom-6 right-6 h-14 w-14 p-0 flex items-center justify-center z-10 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow-lg border-2 border-transparent bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-border before:content-[''] before:absolute before:inset-[2px] before:bg-gray-100 before:rounded-xl before:z-[-1]"
+        className="fixed bottom-6 right-6 h-14 w-14 p-0 flex items-center justify-center z-10 bg-gray-100 hover:bg-gray-200 rounded-[22px] shadow-lg border-2 border-transparent bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-border before:content-[''] before:absolute before:inset-[2px] before:bg-gray-100 before:rounded-[20px] before:z-[-1]"
         size="icon"
         variant="ghost"
       >
