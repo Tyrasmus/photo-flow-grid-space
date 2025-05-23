@@ -16,11 +16,11 @@ const FloatingActionButton = ({
 }: FloatingActionButtonProps) => {
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
-      <div className="relative h-14 w-14">
+      <div className="relative h-[67px] w-[67px]">
         {/* SVG squircle background with gradient outline */}
         <svg 
           className="absolute inset-0 w-full h-full drop-shadow-lg" 
-          viewBox="0 0 56 56" 
+          viewBox="0 0 67 67" 
           fill="none"
           preserveAspectRatio="xMidYMid meet"
         >
@@ -35,7 +35,7 @@ const FloatingActionButton = ({
           
           {/* Gradient outline with balanced curvature on all sides */}
           <path
-            d="M28 8C36 8 41 9.5 44.5 13C47.5 16.5 48 22 48 28C48 34 47.5 39.5 44.5 43C41 46.5 36 48 28 48C20 48 15 46.5 11.5 43C8.5 39.5 8 34 8 28C8 22 8.5 16.5 11.5 13C15 9.5 20 8 28 8Z"
+            d="M33.5 9.5C42.8 9.5 48.9 11.4 53.4 15.9C57.3 19.8 57.5 26.4 57.5 33.5C57.5 40.6 57.3 47.2 53.4 51.1C48.9 55.6 42.8 57.5 33.5 57.5C24.2 57.5 18.1 55.6 13.6 51.1C9.7 47.2 9.5 40.6 9.5 33.5C9.5 26.4 9.7 19.8 13.6 15.9C18.1 11.4 24.2 9.5 33.5 9.5Z"
             stroke="url(#gradient)"
             strokeWidth="2"
             fill="rgb(243 244 246)"
@@ -46,12 +46,12 @@ const FloatingActionButton = ({
         {/* Button content */}
         <Button 
           className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent group"
-          style={{ width: "56px", height: "56px" }}
+          style={{ width: "67px", height: "67px" }}
           size="icon"
           variant="ghost"
           onClick={onClick}
         >
-          <Icon className="h-6 w-6 text-gray-600" />
+          <Icon className="h-7 w-7 text-gray-600" />
         </Button>
       </div>
     </div>
