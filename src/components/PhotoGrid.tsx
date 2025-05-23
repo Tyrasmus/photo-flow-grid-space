@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import PhotoCard, { Photo } from './PhotoCard';
+import FloatingActionButton from './FloatingActionButton';
 import { photoAnimations } from '@/utils/animations';
 import { Plus } from 'lucide-react';
 
@@ -139,6 +141,11 @@ const PhotoGrid = () => {
     }
   };
 
+  const handleAddPhoto = () => {
+    console.log('Add new photo clicked');
+    // Add your photo upload logic here
+  };
+
   // Sort photos to show pinned ones first
   const sortedPhotos = [...photos].sort((a, b) => {
     if (a.pinned && !b.pinned) return -1;
@@ -162,7 +169,11 @@ const PhotoGrid = () => {
         </div>
       </div>
       
-      {/* Removed the FloatingActionButton component reference */}
+      {/* Floating Action Button */}
+      <FloatingActionButton 
+        icon={Plus} 
+        onClick={handleAddPhoto} 
+      />
       
       {/* Add animations using style tag */}
       <style>
