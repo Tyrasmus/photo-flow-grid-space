@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Pin } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -124,13 +125,29 @@ const PhotoGrid = () => {
       pinned: false
     }
   ]);
+  
+  const [animatingId, setAnimatingId] = useState<string | null>(null);
 
   const togglePin = (id: string) => {
+    const photo = photos.find(p => p.id === id);
+    const isBeingPinned = photo && !photo.pinned;
+    
+    if (isBeingPinned) {
+      setAnimatingId(id);
+    }
+    
     setPhotos(prevPhotos =>
       prevPhotos.map(photo =>
         photo.id === id ? { ...photo, pinned: !photo.pinned } : photo
       )
     );
+    
+    // Clear animation state after animation completes
+    if (isBeingPinned) {
+      setTimeout(() => {
+        setAnimatingId(null);
+      }, 600); // Match this with animation duration
+    }
   };
 
   // Sort photos to show pinned ones first
@@ -148,7 +165,15 @@ const PhotoGrid = () => {
           {sortedPhotos.map((photo) => (
             <div
               key={photo.id}
-              className="relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className={cn(
+                "relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105",
+                photo.pinned && animatingId === photo.id && "animate-slide-in-fade",
+                !photo.pinned && "animate-photo-appear"
+              )}
+              style={{
+                animationDuration: '0.5s',
+                animationFillMode: 'forwards'
+              }}
             >
               <div className="relative">
                 <AspectRatio ratio={2/3}>
@@ -188,6 +213,37 @@ const PhotoGrid = () => {
           ))}
         </div>
       </div>
+      
+      {/* Add animations to global styles */}
+      <style jsx global>{`
+        @keyframes slideInFade {
+          0% {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes photoAppear {
+          0% {
+            opacity: 0.7;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        
+        .animate-slide-in-fade {
+          animation: slideInFade 0.5s ease-out forwards;
+        }
+        
+        .animate-photo-appear {
+          animation: photoAppear 0.4s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 };
