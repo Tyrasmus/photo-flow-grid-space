@@ -1,13 +1,13 @@
 
 export const photoAnimations = `
-@keyframes slideInFade {
+@keyframes fadeInFromCenter {
   0% {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateY(5px) scale(0.95);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -20,8 +20,8 @@ export const photoAnimations = `
   }
 }
 
-.animate-slide-in-fade {
-  animation: slideInFade 0.5s ease-out forwards;
+.animate-fade-in-center {
+  animation: fadeInFromCenter 0.5s ease-out forwards;
 }
 
 .animate-photo-appear {

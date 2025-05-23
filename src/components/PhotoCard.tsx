@@ -25,7 +25,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, isAnimating, onPinToggle }
     <div
       className={cn(
         "relative group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105",
-        photo.pinned && isAnimating && "animate-slide-in-fade",
+        photo.pinned && isAnimating && "animate-fade-in-center",
         !photo.pinned && "animate-photo-appear"
       )}
       style={{
