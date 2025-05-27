@@ -18,47 +18,47 @@ const FloatingActionButton = ({
   const [currentLayout, setCurrentLayout] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Define 5 different sparkle layouts
+  // Define 5 different sparkle layouts with reduced distances
   const sparkleLayouts = [
     // Layout 1 - Close to FAB
     [
-      { top: '-8px', right: '-8px', size: 12, delay: '25ms' },
-      { top: '-12px', left: '-4px', size: 8, delay: '75ms' },
-      { bottom: '-8px', right: '-12px', size: 10, delay: '50ms' },
-      { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 6, delay: '100ms' },
-      { top: '50%', right: '-16px', transform: 'translateY(-50%)', size: 14, delay: '80ms' }
+      { top: '-6px', right: '-6px', size: 12, delay: '25ms' },
+      { top: '-8px', left: '-4px', size: 8, delay: '75ms' },
+      { bottom: '-6px', right: '-8px', size: 10, delay: '50ms' },
+      { top: '50%', left: '-8px', transform: 'translateY(-50%)', size: 6, delay: '100ms' },
+      { top: '50%', right: '-10px', transform: 'translateY(-50%)', size: 14, delay: '80ms' }
     ],
-    // Layout 2 - Spread out
+    // Layout 2 - Slightly spread out
     [
-      { top: '-16px', right: '-16px', size: 10, delay: '40ms' },
-      { top: '-20px', left: '-8px', size: 12, delay: '60ms' },
-      { bottom: '-16px', right: '-20px', size: 8, delay: '30ms' },
-      { top: '50%', left: '-20px', transform: 'translateY(-50%)', size: 14, delay: '90ms' },
-      { top: '50%', right: '-24px', transform: 'translateY(-50%)', size: 6, delay: '70ms' }
+      { top: '-10px', right: '-10px', size: 10, delay: '40ms' },
+      { top: '-12px', left: '-6px', size: 12, delay: '60ms' },
+      { bottom: '-10px', right: '-12px', size: 8, delay: '30ms' },
+      { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 14, delay: '90ms' },
+      { top: '50%', right: '-14px', transform: 'translateY(-50%)', size: 6, delay: '70ms' }
     ],
-    // Layout 3 - Asymmetric
+    // Layout 3 - Asymmetric but closer
     [
-      { top: '-6px', right: '-20px', size: 14, delay: '35ms' },
-      { top: '-18px', left: '-10px', size: 6, delay: '85ms' },
-      { bottom: '-12px', right: '-8px', size: 12, delay: '45ms' },
-      { top: '30%', left: '-16px', size: 8, delay: '65ms' },
-      { top: '70%', right: '-12px', size: 10, delay: '25ms' }
+      { top: '-4px', right: '-12px', size: 14, delay: '35ms' },
+      { top: '-10px', left: '-8px', size: 6, delay: '85ms' },
+      { bottom: '-8px', right: '-6px', size: 12, delay: '45ms' },
+      { top: '30%', left: '-10px', size: 8, delay: '65ms' },
+      { top: '70%', right: '-8px', size: 10, delay: '25ms' }
     ],
-    // Layout 4 - Diagonal pattern
+    // Layout 4 - Diagonal pattern, reduced
     [
-      { top: '-10px', right: '-10px', size: 8, delay: '50ms' },
-      { top: '-14px', left: '-6px', size: 14, delay: '75ms' },
-      { bottom: '-6px', right: '-14px', size: 6, delay: '90ms' },
-      { top: '40%', left: '-18px', size: 12, delay: '30ms' },
-      { bottom: '20%', right: '-18px', size: 10, delay: '60ms' }
+      { top: '-6px', right: '-8px', size: 8, delay: '50ms' },
+      { top: '-10px', left: '-4px', size: 14, delay: '75ms' },
+      { bottom: '-4px', right: '-10px', size: 6, delay: '90ms' },
+      { top: '40%', left: '-12px', size: 12, delay: '30ms' },
+      { bottom: '20%', right: '-12px', size: 10, delay: '60ms' }
     ],
-    // Layout 5 - Wide spread
+    // Layout 5 - Moderate spread
     [
-      { top: '-12px', right: '-24px', size: 12, delay: '45ms' },
-      { top: '-24px', left: '-12px', size: 10, delay: '25ms' },
-      { bottom: '-20px', right: '-16px', size: 14, delay: '85ms' },
-      { top: '50%', left: '-28px', transform: 'translateY(-50%)', size: 8, delay: '65ms' },
-      { bottom: '30%', right: '-28px', size: 6, delay: '105ms' }
+      { top: '-8px', right: '-14px', size: 12, delay: '45ms' },
+      { top: '-14px', left: '-8px', size: 10, delay: '25ms' },
+      { bottom: '-12px', right: '-10px', size: 14, delay: '85ms' },
+      { top: '50%', left: '-16px', transform: 'translateY(-50%)', size: 8, delay: '65ms' },
+      { bottom: '30%', right: '-16px', size: 6, delay: '105ms' }
     ]
   ];
 
