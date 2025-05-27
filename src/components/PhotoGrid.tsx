@@ -1,9 +1,7 @@
 
 import React from 'react';
 import PhotoGridContainer from './PhotoGridContainer';
-import FloatingActionWrapper from './FloatingActionWrapper';
 import { photoAnimations } from '@/utils/animations';
-import { Rocket } from 'lucide-react';
 import { usePhotos } from '@/hooks/usePhotos';
 import { usePhotoAnimation } from '@/hooks/usePhotoAnimation';
 
@@ -22,22 +20,12 @@ const PhotoGrid = () => {
     togglePin(id);
   };
 
-  const handleAddPhoto = () => {
-    console.log('Add new photo clicked');
-    // Add your photo upload logic here
-  };
-
   return (
     <div className="w-full mx-auto py-4 relative">
       <PhotoGridContainer 
         photos={photos}
         isAnimating={isAnimating}
         onPinToggle={handlePinToggle}
-      />
-      
-      <FloatingActionWrapper 
-        icon={Rocket} 
-        onClick={handleAddPhoto} 
       />
       
       <style>
