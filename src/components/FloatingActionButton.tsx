@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
@@ -16,7 +15,52 @@ const FloatingActionButton = ({
 }: FloatingActionButtonProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [currentLayout, setCurrentLayout] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Define 5 different sparkle layouts
+  const sparkleLayouts = [
+    // Layout 1 - Close to FAB
+    [
+      { top: '-8px', right: '-8px', size: 12, delay: '25ms' },
+      { top: '-12px', left: '-4px', size: 8, delay: '75ms' },
+      { bottom: '-8px', right: '-12px', size: 10, delay: '50ms' },
+      { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 6, delay: '100ms' },
+      { top: '50%', right: '-16px', transform: 'translateY(-50%)', size: 14, delay: '80ms' }
+    ],
+    // Layout 2 - Spread out
+    [
+      { top: '-16px', right: '-16px', size: 10, delay: '40ms' },
+      { top: '-20px', left: '-8px', size: 12, delay: '60ms' },
+      { bottom: '-16px', right: '-20px', size: 8, delay: '30ms' },
+      { top: '50%', left: '-20px', transform: 'translateY(-50%)', size: 14, delay: '90ms' },
+      { top: '50%', right: '-24px', transform: 'translateY(-50%)', size: 6, delay: '70ms' }
+    ],
+    // Layout 3 - Asymmetric
+    [
+      { top: '-6px', right: '-20px', size: 14, delay: '35ms' },
+      { top: '-18px', left: '-10px', size: 6, delay: '85ms' },
+      { bottom: '-12px', right: '-8px', size: 12, delay: '45ms' },
+      { top: '30%', left: '-16px', size: 8, delay: '65ms' },
+      { top: '70%', right: '-12px', size: 10, delay: '25ms' }
+    ],
+    // Layout 4 - Diagonal pattern
+    [
+      { top: '-10px', right: '-10px', size: 8, delay: '50ms' },
+      { top: '-14px', left: '-6px', size: 14, delay: '75ms' },
+      { bottom: '-6px', right: '-14px', size: 6, delay: '90ms' },
+      { top: '40%', left: '-18px', size: 12, delay: '30ms' },
+      { bottom: '20%', right: '-18px', size: 10, delay: '60ms' }
+    ],
+    // Layout 5 - Wide spread
+    [
+      { top: '-12px', right: '-24px', size: 12, delay: '45ms' },
+      { top: '-24px', left: '-12px', size: 10, delay: '25ms' },
+      { bottom: '-20px', right: '-16px', size: 14, delay: '85ms' },
+      { top: '50%', left: '-28px', transform: 'translateY(-50%)', size: 8, delay: '65ms' },
+      { bottom: '30%', right: '-28px', size: 6, delay: '105ms' }
+    ]
+  ];
 
   const handleFabClick = () => {
     setIsMenuOpen(true);
@@ -25,6 +69,16 @@ const FloatingActionButton = ({
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    // Randomly select a new layout on each hover
+    setCurrentLayout(Math.floor(Math.random() * sparkleLayouts.length));
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   // Close menu when clicking outside
@@ -131,58 +185,27 @@ const FloatingActionButton = ({
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
-        {/* Sparkles around the FAB with staggered animation */}
+        {/* Sparkles around the FAB with current layout */}
         <div className="absolute inset-0">
-          {/* Sparkle 1 - top right */}
-          <Sparkle 
-            className={`absolute -top-2 -right-2 text-white transition-all duration-300 ${
-              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-            }`}
-            style={{ transitionDelay: isHovered ? '25ms' : '0ms' }}
-            size={12}
-            strokeWidth={2}
-            fill="white"
-          />
-          {/* Sparkle 2 - top left */}
-          <Sparkle 
-            className={`absolute -top-3 -left-1 text-white transition-all duration-300 ${
-              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-            }`}
-            style={{ transitionDelay: isHovered ? '75ms' : '0ms' }}
-            size={8}
-            strokeWidth={2}
-            fill="white"
-          />
-          {/* Sparkle 3 - bottom right */}
-          <Sparkle 
-            className={`absolute -bottom-2 -right-3 text-white transition-all duration-300 ${
-              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-            }`}
-            style={{ transitionDelay: isHovered ? '50ms' : '0ms' }}
-            size={10}
-            strokeWidth={2}
-            fill="white"
-          />
-          {/* Sparkle 4 - left middle */}
-          <Sparkle 
-            className={`absolute top-1/2 -left-3 -translate-y-1/2 text-white transition-all duration-300 ${
-              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-            }`}
-            style={{ transitionDelay: isHovered ? '100ms' : '0ms' }}
-            size={6}
-            strokeWidth={2}
-            fill="white"
-          />
-          {/* Sparkle 5 - right middle */}
-          <Sparkle 
-            className={`absolute top-1/2 -right-4 -translate-y-1/2 text-white transition-all duration-300 ${
-              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-            }`}
-            style={{ transitionDelay: isHovered ? '80ms' : '0ms' }}
-            size={14}
-            strokeWidth={2}
-            fill="white"
-          />
+          {sparkleLayouts[currentLayout].map((sparkle, index) => (
+            <Sparkle 
+              key={index}
+              className={`absolute text-white transition-all duration-300 ${
+                isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+              }`}
+              style={{
+                top: sparkle.top,
+                right: sparkle.right,
+                bottom: sparkle.bottom,
+                left: sparkle.left,
+                transform: sparkle.transform,
+                transitionDelay: isHovered ? sparkle.delay : '0ms'
+              }}
+              size={sparkle.size}
+              strokeWidth={2}
+              fill="white"
+            />
+          ))}
         </div>
 
         {/* SVG squircle background with animated gradient transition */}
@@ -232,8 +255,8 @@ const FloatingActionButton = ({
           size="icon"
           variant="ghost"
           onClick={handleFabClick}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
