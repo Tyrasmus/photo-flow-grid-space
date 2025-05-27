@@ -98,8 +98,9 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
             right: sparkle.right,
             bottom: sparkle.bottom,
             left: sparkle.left,
-            transform: `${sparkle.transform || ''} ${isHovered ? 'rotate(180deg)' : 'rotate(0deg)'}`,
+            transform: `${sparkle.transform || ''} ${isHovered ? 'rotate(25deg)' : 'rotate(0deg)'}`,
             transitionDelay: isHovered ? sparkle.delay : '0ms',
+            transitionProperty: isHovered ? 'opacity, transform' : 'opacity',
             color: gradientColors[index % gradientColors.length]
           }}
           size={sparkle.size}
