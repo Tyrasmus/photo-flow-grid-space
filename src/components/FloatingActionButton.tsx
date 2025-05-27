@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon, X, Send, Paperclip } from 'lucide-react';
 
 interface FloatingActionButtonProps {
   icon: LucideIcon;
@@ -14,6 +14,121 @@ const FloatingActionButton = ({
   onClick,
   className = ""
 }: FloatingActionButtonProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const handleFabClick = () => {
+    setIsMenuOpen(true);
+    if (onClick) onClick();
+  };
+
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        handleCloseMenu();
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  if (isMenuOpen) {
+    return (
+      <div className={`fixed bottom-6 right-6 z-10 ${className}`} ref={menuRef}>
+        <div className="w-80 h-[398px] bg-white rounded-3xl shadow-lg border border-gray-200 flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-4 h-4 bg-white rounded-sm"></div>
+              </div>
+              <h2 className="text-lg font-semibold text-gray-900">Rocket Manager</h2>
+            </div>
+            <div className="flex gap-2">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
+                onClick={handleCloseMenu}
+              >
+                <X className="w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 px-6 pb-4">
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Here are some ways I can help you with your launch plan.
+            </p>
+
+            <div className="space-y-3 mb-6">
+              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors">
+                <span className="text-gray-700">Add a </span>
+                <span className="text-purple-600 font-medium">new goal</span>
+                <span className="text-gray-700"> and suggest tasks</span>
+              </button>
+
+              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors">
+                <span className="text-gray-700">What should I </span>
+                <span className="text-purple-600 font-medium">work on today?</span>
+              </button>
+
+              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors">
+                <span className="text-gray-700">What are the </span>
+                <span className="text-purple-600 font-medium">next steps?</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Input Section */}
+          <div className="p-4">
+            <div className="relative">
+              <input 
+                type="text" 
+                placeholder="What can I help you with?"
+                className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200"
+              />
+              <Button 
+                size="icon" 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-transparent hover:bg-gray-200 text-gray-400"
+                variant="ghost"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+            
+            <button className="flex items-center gap-2 mt-3 text-sm text-gray-500 hover:text-gray-700 transition-colors">
+              <Paperclip className="w-4 h-4" />
+              Knowledge sources
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
@@ -63,7 +178,7 @@ const FloatingActionButton = ({
           style={{ width: "67px", height: "67px" }}
           size="icon"
           variant="ghost"
-          onClick={onClick}
+          onClick={handleFabClick}
         >
           <Icon className="h-7 w-7 text-gray-600" strokeWidth={3} />
         </Button>
