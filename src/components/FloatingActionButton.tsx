@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
@@ -130,37 +131,57 @@ const FloatingActionButton = ({
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
-        {/* Sparkles around the FAB */}
-        <div className={`absolute inset-0 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Sparkles around the FAB with staggered animation */}
+        <div className="absolute inset-0">
           {/* Sparkle 1 - top right */}
           <Sparkle 
-            className="absolute -top-2 -right-2 text-white" 
+            className={`absolute -top-2 -right-2 text-white transition-all duration-300 ${
+              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`}
+            style={{ transitionDelay: isHovered ? '0ms' : '0ms' }}
             size={12}
             strokeWidth={2}
+            fill="white"
           />
           {/* Sparkle 2 - top left */}
           <Sparkle 
-            className="absolute -top-3 -left-1 text-white" 
+            className={`absolute -top-3 -left-1 text-white transition-all duration-300 ${
+              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`}
+            style={{ transitionDelay: isHovered ? '100ms' : '0ms' }}
             size={8}
             strokeWidth={2}
+            fill="white"
           />
           {/* Sparkle 3 - bottom right */}
           <Sparkle 
-            className="absolute -bottom-2 -right-3 text-white" 
+            className={`absolute -bottom-2 -right-3 text-white transition-all duration-300 ${
+              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`}
+            style={{ transitionDelay: isHovered ? '200ms' : '0ms' }}
             size={10}
             strokeWidth={2}
+            fill="white"
           />
           {/* Sparkle 4 - left middle */}
           <Sparkle 
-            className="absolute top-1/2 -left-3 -translate-y-1/2 text-white" 
+            className={`absolute top-1/2 -left-3 -translate-y-1/2 text-white transition-all duration-300 ${
+              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`}
+            style={{ transitionDelay: isHovered ? '300ms' : '0ms' }}
             size={6}
             strokeWidth={2}
+            fill="white"
           />
           {/* Sparkle 5 - right middle */}
           <Sparkle 
-            className="absolute top-1/2 -right-4 -translate-y-1/2 text-white" 
+            className={`absolute top-1/2 -right-4 -translate-y-1/2 text-white transition-all duration-300 ${
+              isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`}
+            style={{ transitionDelay: isHovered ? '400ms' : '0ms' }}
             size={14}
             strokeWidth={2}
+            fill="white"
           />
         </div>
 
