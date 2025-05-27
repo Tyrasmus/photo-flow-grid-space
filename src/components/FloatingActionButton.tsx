@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
@@ -75,12 +74,12 @@ const FloatingActionButton = ({
           </div>
 
           {/* Content */}
-          <div className="flex-1 px-6 pb-4">
+          <div className="flex-1 px-6 pb-4 flex flex-col">
             <p className="text-gray-600 mb-6 leading-relaxed text-sm">
               Here are some ways I can help you with your launch plan.
             </p>
 
-            <div className="space-y-3 mb-6">
+            <div className="space-y-3 mb-6 flex-1">
               <button className="inline-block text-left px-4 py-4 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm">
                 <span className="text-gray-700">Add a </span>
                 <span className="text-purple-600 font-medium">new goal</span>
@@ -97,29 +96,29 @@ const FloatingActionButton = ({
                 <span className="text-purple-600 font-medium">next steps?</span>
               </button>
             </div>
-          </div>
 
-          {/* Input Section */}
-          <div className="p-4">
-            <div className="relative">
-              <input 
-                type="text" 
-                placeholder="What can I help you with?"
-                className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200 text-sm"
-              />
-              <Button 
-                size="icon" 
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-transparent hover:bg-gray-200 text-gray-400"
-                variant="ghost"
-              >
-                <Send className="w-4 h-4" />
-              </Button>
+            {/* Input Section - now properly contained within the menu */}
+            <div className="mt-auto">
+              <div className="relative">
+                <input 
+                  type="text" 
+                  placeholder="What can I help you with?"
+                  className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200 text-sm"
+                />
+                <Button 
+                  size="icon" 
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-transparent hover:bg-gray-200 text-gray-400"
+                  variant="ghost"
+                >
+                  <Send className="w-4 h-4" />
+                </Button>
+              </div>
+              
+              <button className="flex items-center gap-2 mt-3 text-sm text-gray-500 hover:text-gray-700 transition-colors">
+                <Paperclip className="w-4 h-4" />
+                Knowledge sources
+              </button>
             </div>
-            
-            <button className="flex items-center gap-2 mt-3 text-sm text-gray-500 hover:text-gray-700 transition-colors">
-              <Paperclip className="w-4 h-4" />
-              Knowledge sources
-            </button>
           </div>
         </div>
       </div>
