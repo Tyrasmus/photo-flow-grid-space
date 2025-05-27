@@ -32,7 +32,12 @@ const FloatingActionButton = ({
 
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
-      <div className="relative h-[67px] w-[67px] group drop-shadow-lg">
+      <div 
+        className="relative h-[67px] w-[67px] group"
+        style={{
+          filter: 'drop-shadow(0 10px 8px rgba(157, 41, 176, 0.15)) drop-shadow(0 4px 3px rgba(73, 76, 216, 0.1)) drop-shadow(0 1px 0px rgba(62, 197, 253, 0.05))'
+        }}
+      >
         {/* Sparkles around the FAB with current layout */}
         <SparkleAnimation 
           isHovered={isHovered} 
