@@ -90,7 +90,7 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
       {sparkleLayouts[currentLayout].map((sparkle, index) => (
         <Sparkle 
           key={index}
-          className={`absolute transition-opacity duration-500 ${
+          className={`absolute transition-all duration-500 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
@@ -98,8 +98,9 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
             right: sparkle.right,
             bottom: sparkle.bottom,
             left: sparkle.left,
-            transform: sparkle.transform,
+            transform: `${sparkle.transform || ''} ${isHovered ? 'rotate(25deg)' : 'rotate(0deg)'}`,
             transitionDelay: isHovered ? sparkle.delay : '0ms',
+            transitionProperty: isHovered ? 'opacity, transform' : 'opacity',
             color: gradientColors[index % gradientColors.length]
           }}
           size={sparkle.size}
