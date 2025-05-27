@@ -16,7 +16,7 @@ const FloatingActionButton = ({
 }: FloatingActionButtonProps) => {
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
-      <div className="relative h-[67px] w-[67px]">
+      <div className="relative h-[67px] w-[67px] group">
         {/* SVG squircle background with gradient outline */}
         <svg 
           className="absolute inset-0 w-full h-full drop-shadow-lg" 
@@ -39,7 +39,7 @@ const FloatingActionButton = ({
             stroke="url(#gradient)"
             strokeWidth="4"
             fill="rgb(243 244 246)"
-            className="transition-colors duration-200 hover:fill-gray-200"
+            className="transition-all duration-300 hover:fill-gray-200 group-hover:stroke-purple-600"
           />
         </svg>
         
