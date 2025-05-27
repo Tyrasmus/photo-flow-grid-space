@@ -23,16 +23,16 @@ const GradientSVG = () => {
         </linearGradient>
       </defs>
       
-      {/* Base gradient path with stroke width 2px */}
+      {/* Base path with no stroke at rest */}
       <path
         d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
-        stroke="url(#gradient)"
-        strokeWidth="2"
+        stroke="none"
+        strokeWidth="0"
         fill="white"
-        className="transition-all duration-300 ease-out hover:fill-gray-100 group-hover:stroke-[2px]"
+        className="transition-all duration-300 ease-out hover:fill-gray-100"
       />
       
-      {/* Overlay magenta path that fades in on hover with animated stroke width */}
+      {/* Overlay magenta path that fades in on hover with stroke */}
       <path
         d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
         stroke="url(#magentaGradient)"
