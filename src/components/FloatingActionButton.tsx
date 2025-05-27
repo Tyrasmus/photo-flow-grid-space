@@ -16,7 +16,9 @@ const FloatingActionButton = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [currentLayout, setCurrentLayout] = useState(0);
+  const [sparkleStates, setSparkleStates] = useState([true, true, true]);
   const menuRef = useRef<HTMLDivElement>(null);
+  const twinkleIntervals = useRef<NodeJS.Timeout[]>([]);
 
   // Define 7 different sparkle layouts with 3 stars each
   const sparkleLayouts = [
@@ -64,6 +66,41 @@ const FloatingActionButton = ({
     ]
   ];
 
+  const startTwinkling = () => {
+    // Clear any existing intervals
+    twinkleIntervals.current.forEach(interval => clearInterval(interval));
+    twinkleIntervals.current = [];
+
+    // Create twinkling intervals for each star
+    sparkleStates.forEach((_, index) => {
+      const createTwinkleInterval = () => {
+        const randomDelay = Math.random() * 100 + 50; // 50-150ms
+        
+        const interval = setInterval(() => {
+          setSparkleStates(prev => {
+            const newStates = [...prev];
+            newStates[index] = !newStates[index];
+            return newStates;
+          });
+          
+          // Clear and recreate with new random interval
+          clearInterval(interval);
+          twinkleIntervals.current[index] = createTwinkleInterval();
+        }, randomDelay);
+        
+        return interval;
+      };
+      
+      twinkleIntervals.current[index] = createTwinkleInterval();
+    });
+  };
+
+  const stopTwinkling = () => {
+    twinkleIntervals.current.forEach(interval => clearInterval(interval));
+    twinkleIntervals.current = [];
+    setSparkleStates([false, false, false]);
+  };
+
   const handleFabClick = () => {
     setIsMenuOpen(true);
     if (onClick) onClick();
@@ -77,11 +114,21 @@ const FloatingActionButton = ({
     setIsHovered(true);
     // Randomly select a new layout on each hover
     setCurrentLayout(Math.floor(Math.random() * sparkleLayouts.length));
+    setSparkleStates([true, true, true]);
+    startTwinkling();
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    stopTwinkling();
   };
+
+  // Clean up intervals on unmount
+  useEffect(() => {
+    return () => {
+      twinkleIntervals.current.forEach(interval => clearInterval(interval));
+    };
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -187,13 +234,13 @@ const FloatingActionButton = ({
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
-        {/* Sparkles around the FAB with current layout */}
+        {/* Sparkles around the FAB with current layout and independent twinkling */}
         <div className="absolute inset-0">
           {sparkleLayouts[currentLayout].map((sparkle, index) => (
             <Sparkle 
               key={index}
               className={`absolute text-white transition-all duration-300 ${
-                isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+                isHovered && sparkleStates[index] ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
               }`}
               style={{
                 top: sparkle.top,
