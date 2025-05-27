@@ -1,15 +1,25 @@
-
 import FloatingActionWrapper from '../components/FloatingActionWrapper';
-import { Rocket } from "lucide-react";
+import { Rocket, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Fab = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleAddPhoto = () => {
     console.log('Add new photo clicked');
     // Add your photo upload logic here
+  };
+
+  const getCurrentPageName = () => {
+    return location.pathname === '/' ? 'People' : 'FAB';
   };
 
   return (
@@ -21,25 +31,33 @@ const Fab = () => {
             FAB Demo
           </h1>
           
-          {/* Centered navigation toggle */}
-          <div className="flex gap-1 justify-center">
-            <Button 
-              asChild
-              variant={location.pathname === '/' ? "default" : "outline"} 
-              className="rounded-full text-xs px-3 py-1 h-8"
-              size="sm"
-            >
-              <Link to="/">People</Link>
-            </Button>
-            <Button 
-              asChild
-              variant={location.pathname === '/fab' ? "default" : "outline"} 
-              className="rounded-full text-xs px-3 py-1 h-8"
-              size="sm"
-            >
-              <Link to="/fab">FAB</Link>
-            </Button>
-          </div>
+          {/* Navigation dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button 
+                variant="outline" 
+                className="rounded-full text-xs px-3 py-1 h-8 bg-gray-800/90 text-white hover:bg-gray-700 border-gray-600"
+                size="sm"
+              >
+                {getCurrentPageName()}
+                <ChevronDown className="ml-1 h-3 w-3" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-gray-800 border-gray-600">
+              <DropdownMenuItem 
+                onClick={() => navigate('/')}
+                className="text-white hover:bg-gray-700 cursor-pointer"
+              >
+                People
+              </DropdownMenuItem>
+              <DropdownMenuItem 
+                onClick={() => navigate('/fab')}
+                className="text-white hover:bg-gray-700 cursor-pointer"
+              >
+                FAB
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
 
