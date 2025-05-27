@@ -1,5 +1,3 @@
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
@@ -18,9 +16,7 @@ const FloatingActionButton = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [currentLayout, setCurrentLayout] = useState(0);
-  const [sparkleOpacities, setSparkleOpacities] = useState([100, 100, 100]);
   const menuRef = useRef<HTMLDivElement>(null);
-  const twinkleIntervals = useRef<NodeJS.Timeout[]>([]);
 
   // Define 7 different sparkle layouts with 3 stars each
   const sparkleLayouts = [
@@ -68,42 +64,6 @@ const FloatingActionButton = ({
     ]
   ];
 
-  const startTwinkling = () => {
-    // Clear any existing intervals
-    twinkleIntervals.current.forEach(interval => clearInterval(interval));
-    twinkleIntervals.current = [];
-
-    // Create twinkling intervals for each star
-    sparkleOpacities.forEach((_, index) => {
-      const createTwinkleInterval = () => {
-        const randomDelay = Math.random() * 1000 + 800; // 800-1800ms for slower, more subtle twinkling
-        
-        const interval = setInterval(() => {
-          setSparkleOpacities(prev => {
-            const newOpacities = [...prev];
-            // Generate random opacity between 10% and 100%
-            newOpacities[index] = Math.floor(Math.random() * 90) + 10;
-            return newOpacities;
-          });
-          
-          // Clear and recreate with new random interval
-          clearInterval(interval);
-          twinkleIntervals.current[index] = createTwinkleInterval();
-        }, randomDelay);
-        
-        return interval;
-      };
-      
-      twinkleIntervals.current[index] = createTwinkleInterval();
-    });
-  };
-
-  const stopTwinkling = () => {
-    twinkleIntervals.current.forEach(interval => clearInterval(interval));
-    twinkleIntervals.current = [];
-    setSparkleOpacities([0, 0, 0]);
-  };
-
   const handleFabClick = () => {
     setIsMenuOpen(true);
     if (onClick) onClick();
@@ -117,21 +77,11 @@ const FloatingActionButton = ({
     setIsHovered(true);
     // Randomly select a new layout on each hover
     setCurrentLayout(Math.floor(Math.random() * sparkleLayouts.length));
-    setSparkleOpacities([100, 100, 100]);
-    startTwinkling();
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    stopTwinkling();
   };
-
-  // Clean up intervals on unmount
-  useEffect(() => {
-    return () => {
-      twinkleIntervals.current.forEach(interval => clearInterval(interval));
-    };
-  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -237,19 +187,21 @@ const FloatingActionButton = ({
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
-        {/* Sparkles around the FAB with current layout and smooth opacity transitions */}
+        {/* Sparkles around the FAB with current layout */}
         <div className="absolute inset-0">
           {sparkleLayouts[currentLayout].map((sparkle, index) => (
             <Sparkle 
               key={index}
-              className={`absolute text-white transition-opacity duration-[2000ms] ease-in-out`}
+              className={`absolute text-white transition-all duration-300 ${
+                isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+              }`}
               style={{
                 top: sparkle.top,
                 right: sparkle.right,
                 bottom: sparkle.bottom,
                 left: sparkle.left,
                 transform: sparkle.transform,
-                opacity: isHovered ? sparkleOpacities[index] / 100 : 0,
+                transitionDelay: isHovered ? sparkle.delay : '0ms'
               }}
               size={sparkle.size}
               strokeWidth={2}
@@ -333,4 +285,3 @@ const FloatingActionButton = ({
 };
 
 export default FloatingActionButton;
-
