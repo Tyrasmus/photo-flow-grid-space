@@ -22,8 +22,8 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
           isHovered ? 'text-transparent' : 'text-gray-600'
         }`}
         strokeWidth={3}
-        fill={isHovered ? 'url(#rocketGradient)' : 'none'}
-        stroke={isHovered ? 'url(#rocketGradient)' : 'currentColor'}
+        fill={isHovered ? '#9D29B0' : 'none'}
+        stroke={isHovered ? '#9D29B0' : 'currentColor'}
       />
     </svg>
   );
