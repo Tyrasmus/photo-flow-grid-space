@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
@@ -74,13 +75,13 @@ const FloatingActionButton = ({
           </div>
 
           {/* Content Area */}
-          <div className="flex-1 flex flex-col px-6">
-            <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+          <div className="flex-1 flex flex-col px-6 min-h-0">
+            <p className="text-gray-600 mb-4 leading-relaxed text-sm">
               Here are some ways I can help you with your launch plan.
             </p>
 
             {/* Prompt Pills */}
-            <div className="space-y-3 flex-1">
+            <div className="space-y-3 flex-1 overflow-y-auto">
               <button className="inline-block text-left px-4 py-4 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm">
                 <span className="text-gray-700">Add a </span>
                 <span className="text-purple-600 font-medium">new goal</span>
@@ -99,8 +100,8 @@ const FloatingActionButton = ({
             </div>
           </div>
 
-          {/* Input Section - Fixed at bottom with proper margins */}
-          <div className="px-6 pb-6 pt-6">
+          {/* Input Section - Fixed at bottom */}
+          <div className="px-6 pb-6 pt-4 flex-shrink-0">
             <div className="relative">
               <input 
                 type="text" 
@@ -154,18 +155,18 @@ const FloatingActionButton = ({
           <path
             d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
             stroke="url(#gradient)"
-            strokeWidth="2"
+            strokeWidth="1"
             fill="white"
-            className="transition-all duration-300 ease-out hover:fill-gray-100 group-hover:stroke-[4px]"
+            className="transition-all duration-300 ease-out hover:fill-gray-100 group-hover:stroke-[2px]"
           />
           
           {/* Overlay magenta path that fades in on hover with animated stroke width */}
           <path
             d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
             stroke="url(#magentaGradient)"
-            strokeWidth="2"
+            strokeWidth="1"
             fill="transparent"
-            className="transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 group-hover:stroke-[4px]"
+            className="transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 group-hover:stroke-[2px]"
           />
         </svg>
         
