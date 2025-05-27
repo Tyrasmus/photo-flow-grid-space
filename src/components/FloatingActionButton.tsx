@@ -37,7 +37,7 @@ const FloatingActionButton = ({
         style={{
           filter: isHovered 
             ? 'drop-shadow(0 20px 32px rgba(157, 41, 176, 0.48)) drop-shadow(0 10px 16px rgba(73, 76, 216, 0.36)) drop-shadow(0 5px 10px rgba(62, 197, 253, 0.24))'
-            : 'none'
+            : 'drop-shadow(0 16px 20px rgba(157, 41, 176, 0.32)) drop-shadow(0 8px 8px rgba(73, 76, 216, 0.24)) drop-shadow(0 3px 5px rgba(62, 197, 253, 0.16))'
         }}
       >
         {/* Sparkles around the FAB with current layout */}
