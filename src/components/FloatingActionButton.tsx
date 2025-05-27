@@ -46,29 +46,17 @@ const FloatingActionButton = ({
   if (isMenuOpen) {
     return (
       <div className={`fixed bottom-6 right-6 z-10 ${className}`} ref={menuRef}>
-        <div className="relative w-80 h-[450px]">
+        <div className="relative w-96 h-[500px]">
           {/* SVG squircle background for the menu */}
           <svg 
             className="absolute inset-0 w-full h-full drop-shadow-lg" 
-            viewBox="0 0 320 450" 
+            viewBox="0 0 384 500" 
             fill="none"
             preserveAspectRatio="xMidYMid meet"
           >
-            {/* Define gradients */}
-            <defs>
-              <linearGradient id="menuGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#E60FEF" />
-                <stop offset="33%" stopColor="#9D29B0" />
-                <stop offset="67%" stopColor="#494CD8" />
-                <stop offset="100%" stopColor="#3EC5FD" />
-              </linearGradient>
-            </defs>
-            
-            {/* Menu squircle path */}
+            {/* Menu squircle path - no border, just white fill */}
             <path
-              d="M160 20C220 20 280 20 290 30C300 40 300 100 300 225C300 350 300 410 290 420C280 430 220 430 160 430C100 430 40 430 30 420C20 410 20 350 20 225C20 100 20 40 30 30C40 20 100 20 160 20Z"
-              stroke="url(#menuGradient)"
-              strokeWidth="2"
+              d="M192 20C260 20 340 20 354 34C368 48 368 128 368 250C368 372 368 452 354 466C340 480 260 480 192 480C124 480 44 480 30 466C16 452 16 372 16 250C16 128 16 48 30 34C44 20 124 20 192 20Z"
               fill="white"
               className="transition-colors duration-200"
             />
