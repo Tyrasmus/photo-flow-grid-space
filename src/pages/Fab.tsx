@@ -24,7 +24,7 @@ const Fab = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-white">
       {/* Centered dropdown navigation */}
       <div className="flex justify-center pt-8 pb-4">
         <DropdownMenu>
@@ -57,7 +57,7 @@ const Fab = () => {
       {/* Header */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
         <div className="pt-4 pb-3">
-          <h1 className="text-4xl font-bold text-white">
+          <h1 className="text-4xl font-bold text-black">
             FAB Demo
           </h1>
         </div>
@@ -65,9 +65,9 @@ const Fab = () => {
 
       {/* Content */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px] py-8">
-        <div className="text-center text-white">
+        <div className="text-center text-black">
           <p className="text-lg mb-4">This page showcases the Floating Action Button.</p>
-          <p className="text-gray-400">Click the rocket button in the bottom right to see it in action!</p>
+          <p className="text-gray-600">Click the rocket button in the bottom right to see it in action!</p>
         </div>
       </div>
 
