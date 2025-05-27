@@ -7,7 +7,7 @@ interface RocketIconProps {
 const RocketIcon = ({ isHovered }: RocketIconProps) => {
   return (
     <div className={`w-full h-full flex items-center justify-center transition-all duration-300 ease-in-out ${isHovered ? 'scale-110' : 'scale-100'}`}>
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="48" height="48" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="rocketGradient" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#E60FEF" />
