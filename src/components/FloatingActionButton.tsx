@@ -1,7 +1,6 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
+import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
 
 interface FloatingActionButtonProps {
   icon: LucideIcon;
@@ -15,6 +14,7 @@ const FloatingActionButton = ({
   className = ""
 }: FloatingActionButtonProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const handleFabClick = () => {
@@ -170,15 +170,30 @@ const FloatingActionButton = ({
           />
         </svg>
         
-        {/* Button content */}
+        {/* Button content with icon morphing */}
         <Button 
           className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent"
           style={{ width: "67px", height: "67px" }}
           size="icon"
           variant="ghost"
           onClick={handleFabClick}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <Icon className="h-7 w-7 text-gray-600" strokeWidth={3} />
+          <div className="relative w-7 h-7">
+            <Rocket 
+              className={`absolute inset-0 text-gray-600 transition-all duration-300 ease-in-out ${
+                isHovered ? 'opacity-0 scale-75 rotate-12' : 'opacity-100 scale-100 rotate-0'
+              }`} 
+              strokeWidth={3} 
+            />
+            <Sparkle 
+              className={`absolute inset-0 text-gray-600 transition-all duration-300 ease-in-out ${
+                isHovered ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-75 rotate-12'
+              }`} 
+              strokeWidth={3}
+            />
+          </div>
         </Button>
       </div>
     </div>
