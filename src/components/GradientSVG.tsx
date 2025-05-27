@@ -11,13 +11,13 @@ const GradientSVG = () => {
     >
       {/* Define gradients */}
       <defs>
-        <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+        <linearGradient id="gradient" x1="100%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#E60FEF" />
           <stop offset="33%" stopColor="#9D29B0" />
           <stop offset="67%" stopColor="#494CD8" />
           <stop offset="100%" stopColor="#3EC5FD" />
         </linearGradient>
-        <linearGradient id="magentaGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+        <linearGradient id="magentaGradient" x1="100%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#9D29B0" />
           <stop offset="100%" stopColor="#9D29B0" />
         </linearGradient>
