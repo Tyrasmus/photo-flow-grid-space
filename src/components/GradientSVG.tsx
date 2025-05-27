@@ -29,7 +29,7 @@ const GradientSVG = () => {
         stroke="url(#gradient)"
         strokeWidth="2"
         fill="white"
-        className="transition-all duration-300 ease-out hover:fill-gray-100 group-hover:stroke-[4px]"
+        className="transition-all duration-300 ease-out hover:fill-gray-100 group-hover:stroke-[2px]"
       />
       
       {/* Overlay magenta path that fades in on hover with animated stroke width */}
@@ -38,7 +38,7 @@ const GradientSVG = () => {
         stroke="url(#magentaGradient)"
         strokeWidth="2"
         fill="transparent"
-        className="transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 group-hover:stroke-[4px]"
+        className="transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 group-hover:stroke-[2px]"
       />
     </svg>
   );
