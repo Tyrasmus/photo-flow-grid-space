@@ -35,7 +35,7 @@ const FloatingActionButton = ({
       <div 
         className="relative h-[67px] w-[67px] group"
         style={{
-          filter: 'drop-shadow(0 10px 8px rgba(157, 41, 176, 0.15)) drop-shadow(0 4px 3px rgba(73, 76, 216, 0.1)) drop-shadow(0 1px 0px rgba(62, 197, 253, 0.05))'
+          filter: 'drop-shadow(0 20px 25px rgba(157, 41, 176, 0.4)) drop-shadow(0 10px 10px rgba(73, 76, 216, 0.3)) drop-shadow(0 4px 6px rgba(62, 197, 253, 0.2))'
         }}
       >
         {/* Sparkles around the FAB with current layout */}
