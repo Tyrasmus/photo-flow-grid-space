@@ -115,7 +115,7 @@ const FloatingActionButton = ({
         </Button>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .group:hover path:last-of-type {
           stroke-dashoffset: 0 !important;
         }
