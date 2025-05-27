@@ -3,7 +3,7 @@ import React from 'react';
 import PhotoGridContainer from './PhotoGridContainer';
 import FloatingActionButton from './FloatingActionButton';
 import { photoAnimations } from '@/utils/animations';
-import { Plus } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 import { usePhotos } from '@/hooks/usePhotos';
 import { usePhotoAnimation } from '@/hooks/usePhotoAnimation';
 
@@ -36,7 +36,7 @@ const PhotoGrid = () => {
       />
       
       <FloatingActionButton 
-        icon={Plus} 
+        icon={Rocket} 
         onClick={handleAddPhoto} 
       />
       
