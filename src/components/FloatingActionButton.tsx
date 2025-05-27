@@ -16,7 +16,7 @@ const FloatingActionButton = ({
 }: FloatingActionButtonProps) => {
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
-      <div className="relative h-[67px] w-[67px] group">
+      <div className="relative h-[67px] w-[67px]">
         {/* SVG squircle background with gradient outline */}
         <svg 
           className="absolute inset-0 w-full h-full drop-shadow-lg" 
@@ -24,23 +24,12 @@ const FloatingActionButton = ({
           fill="none"
           preserveAspectRatio="xMidYMid meet"
         >
-          {/* Define animated gradient */}
+          {/* Define gradient */}
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#3b82f6" />
               <stop offset="50%" stopColor="#8b5cf6" />
               <stop offset="100%" stopColor="#06b6d4" />
-              <animateTransform
-                attributeName="gradientTransform"
-                attributeType="XML"
-                type="rotate"
-                from="0 33.5 33.5"
-                to="360 33.5 33.5"
-                dur="3s"
-                repeatCount="indefinite"
-                begin="0s"
-                className="group-hover:animate-spin"
-              />
             </linearGradient>
           </defs>
           
@@ -50,7 +39,7 @@ const FloatingActionButton = ({
             stroke="url(#gradient)"
             strokeWidth="4"
             fill="rgb(243 244 246)"
-            className="transition-all duration-300 group-hover:fill-gray-200 group-hover:drop-shadow-xl"
+            className="transition-colors duration-200 hover:fill-gray-200"
           />
         </svg>
         
@@ -62,7 +51,7 @@ const FloatingActionButton = ({
           variant="ghost"
           onClick={onClick}
         >
-          <Icon className="h-7 w-7 text-gray-600 transition-transform duration-300 group-hover:scale-110" strokeWidth={3} />
+          <Icon className="h-7 w-7 text-gray-600" strokeWidth={3} />
         </Button>
       </div>
     </div>
