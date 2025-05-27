@@ -5,7 +5,7 @@ const GradientSVG = () => {
   return (
     <svg 
       className="absolute inset-0 w-full h-full drop-shadow-lg" 
-      viewBox="0 0 67 50" 
+      viewBox="0 0 67 67" 
       fill="none"
       preserveAspectRatio="xMidYMid meet"
     >
@@ -23,9 +23,9 @@ const GradientSVG = () => {
         </linearGradient>
       </defs>
       
-      {/* Base gradient path with stroke width 2px - adjusted for reduced height */}
+      {/* Base gradient path with stroke width 2px */}
       <path
-        d="M33.5 6C43.5 6 50 6.5 54.5 10C59 13.5 59.5 18 59.5 25C59.5 32 59 36.5 54.5 40C50 43.5 43.5 44 33.5 44C23.5 44 17 43.5 12.5 40C8 36.5 7.5 32 7.5 25C7.5 18 8 13.5 12.5 10C17 6.5 23.5 6 33.5 6Z"
+        d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
         stroke="url(#gradient)"
         strokeWidth="2"
         fill="white"
@@ -34,7 +34,7 @@ const GradientSVG = () => {
       
       {/* Overlay magenta path that fades in on hover with animated stroke width */}
       <path
-        d="M33.5 6C43.5 6 50 6.5 54.5 10C59 13.5 59.5 18 59.5 25C59.5 32 59 36.5 54.5 40C50 43.5 43.5 44 33.5 44C23.5 44 17 43.5 12.5 40C8 36.5 7.5 32 7.5 25C7.5 18 8 13.5 12.5 10C17 6.5 23.5 6 33.5 6Z"
+        d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
         stroke="url(#magentaGradient)"
         strokeWidth="2"
         fill="transparent"
