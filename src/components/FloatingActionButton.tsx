@@ -27,9 +27,9 @@ const FloatingActionButton = ({
           {/* Define gradients */}
           <defs>
             <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#9D29B0" />
-              <stop offset="50%" stopColor="#9D29B0" />
-              <stop offset="50%" stopColor="#3EC5FD" />
+              <stop offset="0%" stopColor="#D743DD" />
+              <stop offset="33%" stopColor="#9D29B0" />
+              <stop offset="67%" stopColor="#9D29B0" />
               <stop offset="100%" stopColor="#3EC5FD" />
             </linearGradient>
             <linearGradient id="magentaGradient" x1="0%" y1="100%" x2="100%" y2="0%">
