@@ -19,11 +19,11 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
       </defs>
       <Rocket 
         className={`transition-all duration-300 ease-in-out ${
-          isHovered ? 'text-transparent' : 'text-gray-600'
+          isHovered ? 'text-transparent' : 'text-transparent'
         }`}
         strokeWidth={3}
         fill={isHovered ? '#9D29B0' : 'none'}
-        stroke={isHovered ? '#9D29B0' : 'currentColor'}
+        stroke={isHovered ? '#9D29B0' : 'url(#rocketGradient)'}
       />
     </svg>
   );
