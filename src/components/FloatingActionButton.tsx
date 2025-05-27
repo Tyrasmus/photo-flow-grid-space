@@ -51,7 +51,7 @@ const FloatingActionButton = ({
         
         {/* Button content with rocket that fills with gradient on hover */}
         <Button 
-          className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent"
+          className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent p-0"
           style={{ width: "67px", height: "67px" }}
           size="icon"
           variant="ghost"
@@ -59,7 +59,9 @@ const FloatingActionButton = ({
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <RocketIcon isHovered={isHovered} />
+          <div className="w-10 h-10 flex items-center justify-center">
+            <RocketIcon isHovered={isHovered} />
+          </div>
         </Button>
       </div>
     </div>

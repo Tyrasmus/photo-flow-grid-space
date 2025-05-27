@@ -7,7 +7,7 @@ interface RocketIconProps {
 const RocketIcon = ({ isHovered }: RocketIconProps) => {
   return (
     <div className={`w-full h-full flex items-center justify-center transition-all duration-300 ease-in-out ${isHovered ? 'scale-110' : 'scale-100'}`}>
-      <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="rocketGradient" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#E60FEF" />
@@ -21,7 +21,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
             <feOffset dy="0.75"/>
             <feGaussianBlur stdDeviation="1.5"/>
             <feComposite in2="hardAlpha" operator="out"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.18 0 0 0 0 0.101961 0 0 0 0 0.615686 0 0 0 0.7 0"/>
             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4739_51537"/>
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4739_51537" result="shape"/>
           </filter>
