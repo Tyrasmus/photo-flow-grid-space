@@ -27,7 +27,7 @@ const GradientSVG = () => {
       <path
         d="M33.5 8C43.5 8 50 8.5 54.5 13C59 17.5 59.5 24 59.5 33.5C59.5 43 59 49.5 54.5 54C50 58.5 43.5 59 33.5 59C23.5 59 17 58.5 12.5 54C8 49.5 7.5 43 7.5 33.5C7.5 24 8 17.5 12.5 13C17 8.5 23.5 8 33.5 8Z"
         stroke="url(#gradient)"
-        strokeWidth="1"
+        strokeWidth="1.5"
         fill="white"
         className="transition-all duration-300 ease-out hover:fill-gray-100"
       />
