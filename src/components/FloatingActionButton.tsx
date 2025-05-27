@@ -99,8 +99,8 @@ const FloatingActionButton = ({
             </div>
           </div>
 
-          {/* Input Section - Fixed at bottom */}
-          <div className="px-6 pb-6">
+          {/* Input Section - Fixed at bottom with proper margins */}
+          <div className="px-6 pb-6 pt-6">
             <div className="relative">
               <input 
                 type="text" 
