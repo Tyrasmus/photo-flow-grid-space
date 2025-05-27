@@ -1,7 +1,6 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { LucideIcon, X, Send, Paperclip } from 'lucide-react';
+import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
 
 interface FloatingActionButtonProps {
   icon: LucideIcon;
@@ -61,10 +60,7 @@ const FloatingActionButton = ({
                 size="icon" 
                 className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
+                <MessageCircle className="w-5 h-5" />
               </Button>
               <Button 
                 variant="ghost" 
