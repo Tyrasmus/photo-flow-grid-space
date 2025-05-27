@@ -31,9 +31,9 @@ const FloatingActionButton = ({
   };
 
   return (
-    <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
+    <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 ${className}`}>
       <div 
-        className="relative h-[67px] w-[67px] group transition-all duration-300 ease-out"
+        className="relative h-[50px] w-[67px] group transition-all duration-300 ease-out"
         style={{
           filter: isHovered 
             ? 'drop-shadow(0 30px 40px rgba(157, 41, 176, 0.6)) drop-shadow(0 15px 20px rgba(73, 76, 216, 0.5)) drop-shadow(0 8px 12px rgba(62, 197, 253, 0.4))'
@@ -52,7 +52,7 @@ const FloatingActionButton = ({
         {/* Button content with rocket that fills with gradient on hover */}
         <Button 
           className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent"
-          style={{ width: "67px", height: "67px" }}
+          style={{ width: "67px", height: "50px" }}
           size="icon"
           variant="ghost"
           onClick={onClick}
