@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
@@ -74,7 +75,7 @@ const FloatingActionButton = ({
     // Create twinkling intervals for each star
     sparkleStates.forEach((_, index) => {
       const createTwinkleInterval = () => {
-        const randomDelay = Math.random() * 100 + 50; // 50-150ms
+        const randomDelay = Math.random() * 1000 + 800; // 800-1800ms for slower, more subtle twinkling
         
         const interval = setInterval(() => {
           setSparkleStates(prev => {
