@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
@@ -46,7 +45,7 @@ const FloatingActionButton = ({
   if (isMenuOpen) {
     return (
       <div className={`fixed bottom-6 right-6 z-10 ${className}`} ref={menuRef}>
-        <div className="w-80 h-[398px] bg-white rounded-3xl shadow-lg border border-gray-200 flex flex-col">
+        <div className="w-80 h-[450px] bg-white rounded-3xl shadow-lg border border-gray-200 flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-6 pb-4">
             <div className="flex items-center gap-3">
@@ -81,7 +80,7 @@ const FloatingActionButton = ({
             </p>
 
             {/* Prompt Pills */}
-            <div className="space-y-3 flex-1 overflow-y-auto">
+            <div className="space-y-3 flex-1">
               <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
                 <span className="text-gray-700">Add a </span>
                 <span className="text-purple-600 font-medium">new goal</span>
