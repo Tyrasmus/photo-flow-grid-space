@@ -21,18 +21,21 @@ const Fab = () => {
             FAB Demo
           </h1>
           
-          <div className="flex gap-2">
+          {/* Centered navigation toggle */}
+          <div className="flex gap-1 justify-center">
             <Button 
               asChild
               variant={location.pathname === '/' ? "default" : "outline"} 
-              className="rounded-full"
+              className="rounded-full text-xs px-3 py-1 h-8"
+              size="sm"
             >
               <Link to="/">People</Link>
             </Button>
             <Button 
               asChild
               variant={location.pathname === '/fab' ? "default" : "outline"} 
-              className="rounded-full"
+              className="rounded-full text-xs px-3 py-1 h-8"
+              size="sm"
             >
               <Link to="/fab">FAB</Link>
             </Button>

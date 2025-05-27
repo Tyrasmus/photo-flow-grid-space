@@ -9,25 +9,28 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-900">
-      {/* Header with buttons */}
+      {/* Header with centered navigation */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
         <div className="flex justify-between items-center pt-12 pb-3">
           <h1 className="text-4xl font-bold text-white">
             People
           </h1>
           
-          <div className="flex gap-2">
+          {/* Centered navigation toggle */}
+          <div className="flex gap-1 justify-center">
             <Button 
               asChild
               variant={location.pathname === '/' ? "default" : "outline"} 
-              className="rounded-full"
+              className="rounded-full text-xs px-3 py-1 h-8"
+              size="sm"
             >
               <Link to="/">People</Link>
             </Button>
             <Button 
               asChild
               variant={location.pathname === '/fab' ? "default" : "outline"} 
-              className="rounded-full"
+              className="rounded-full text-xs px-3 py-1 h-8"
+              size="sm"
             >
               <Link to="/fab">FAB</Link>
             </Button>
