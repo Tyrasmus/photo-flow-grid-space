@@ -240,7 +240,7 @@ const FloatingActionButton = ({
           {sparkleLayouts[currentLayout].map((sparkle, index) => (
             <Sparkle 
               key={index}
-              className={`absolute text-white transition-all duration-300`}
+              className={`absolute text-white transition-all duration-[1500ms] ease-in-out`}
               style={{
                 top: sparkle.top,
                 right: sparkle.right,
