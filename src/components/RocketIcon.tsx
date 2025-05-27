@@ -23,7 +23,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
         }`}
         strokeWidth={3}
         fill={isHovered ? '#9D29B0' : 'none'}
-        stroke={isHovered ? '#9D29B0' : 'url(#rocketGradient)'}
+        stroke={isHovered ? '#9D29B0' : '#9D29B0'}
       />
     </svg>
   );
