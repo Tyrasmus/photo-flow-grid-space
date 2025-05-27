@@ -21,7 +21,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
         className={`transition-all duration-300 ease-in-out ${
           isHovered ? 'text-transparent' : 'text-transparent'
         }`}
-        strokeWidth={3}
+        strokeWidth={1}
         fill={isHovered ? '#9D29B0' : 'none'}
         stroke={isHovered ? '#9D29B0' : '#9D29B0'}
       />
