@@ -18,47 +18,49 @@ const FloatingActionButton = ({
   const [currentLayout, setCurrentLayout] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Define 5 different sparkle layouts with reduced distances
+  // Define 7 different sparkle layouts with 3 stars each
   const sparkleLayouts = [
-    // Layout 1 - Close to FAB
+    // Layout 1 - Close triangle
     [
       { top: '-6px', right: '-6px', size: 12, delay: '25ms' },
       { top: '-8px', left: '-4px', size: 8, delay: '75ms' },
-      { bottom: '-6px', right: '-8px', size: 10, delay: '50ms' },
-      { top: '50%', left: '-8px', transform: 'translateY(-50%)', size: 6, delay: '100ms' },
-      { top: '50%', right: '-10px', transform: 'translateY(-50%)', size: 14, delay: '80ms' }
+      { bottom: '-6px', right: '-8px', size: 10, delay: '50ms' }
     ],
-    // Layout 2 - Slightly spread out
+    // Layout 2 - Side emphasis
     [
       { top: '-10px', right: '-10px', size: 10, delay: '40ms' },
-      { top: '-12px', left: '-6px', size: 12, delay: '60ms' },
-      { bottom: '-10px', right: '-12px', size: 8, delay: '30ms' },
       { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 14, delay: '90ms' },
       { top: '50%', right: '-14px', transform: 'translateY(-50%)', size: 6, delay: '70ms' }
     ],
-    // Layout 3 - Asymmetric but closer
+    // Layout 3 - Asymmetric cluster
     [
       { top: '-4px', right: '-12px', size: 14, delay: '35ms' },
       { top: '-10px', left: '-8px', size: 6, delay: '85ms' },
-      { bottom: '-8px', right: '-6px', size: 12, delay: '45ms' },
-      { top: '30%', left: '-10px', size: 8, delay: '65ms' },
-      { top: '70%', right: '-8px', size: 10, delay: '25ms' }
+      { bottom: '-8px', right: '-6px', size: 12, delay: '45ms' }
     ],
-    // Layout 4 - Diagonal pattern, reduced
+    // Layout 4 - Diagonal line
     [
       { top: '-6px', right: '-8px', size: 8, delay: '50ms' },
-      { top: '-10px', left: '-4px', size: 14, delay: '75ms' },
-      { bottom: '-4px', right: '-10px', size: 6, delay: '90ms' },
       { top: '40%', left: '-12px', size: 12, delay: '30ms' },
-      { bottom: '20%', right: '-12px', size: 10, delay: '60ms' }
+      { bottom: '-4px', right: '-10px', size: 10, delay: '90ms' }
     ],
-    // Layout 5 - Moderate spread
+    // Layout 5 - Vertical emphasis
     [
       { top: '-8px', right: '-14px', size: 12, delay: '45ms' },
       { top: '-14px', left: '-8px', size: 10, delay: '25ms' },
-      { bottom: '-12px', right: '-10px', size: 14, delay: '85ms' },
-      { top: '50%', left: '-16px', transform: 'translateY(-50%)', size: 8, delay: '65ms' },
-      { bottom: '30%', right: '-16px', size: 6, delay: '105ms' }
+      { bottom: '-12px', right: '-10px', size: 14, delay: '85ms' }
+    ],
+    // Layout 6 - Horizontal spread
+    [
+      { top: '50%', left: '-10px', transform: 'translateY(-50%)', size: 8, delay: '65ms' },
+      { top: '50%', right: '-12px', transform: 'translateY(-50%)', size: 12, delay: '105ms' },
+      { top: '-6px', right: '-6px', size: 10, delay: '35ms' }
+    ],
+    // Layout 7 - Corner focus
+    [
+      { top: '-8px', left: '-6px', size: 14, delay: '60ms' },
+      { bottom: '-10px', left: '-8px', size: 6, delay: '30ms' },
+      { bottom: '-6px', right: '-12px', size: 10, delay: '80ms' }
     ]
   ];
 
