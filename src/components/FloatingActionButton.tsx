@@ -22,8 +22,8 @@ const FloatingActionButton = ({
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    // Randomly select a new layout on each hover (7 different layouts)
-    setCurrentLayout(Math.floor(Math.random() * 7));
+    // Randomly select a new layout on each hover (10 different layouts)
+    setCurrentLayout(Math.floor(Math.random() * 10));
   };
 
   const handleMouseLeave = () => {

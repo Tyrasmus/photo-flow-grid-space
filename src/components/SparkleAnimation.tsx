@@ -21,7 +21,7 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
   // Gradient colors from the FAB stroke outline
   const gradientColors = ['#E60FEF', '#9D29B0', '#494CD8', '#3EC5FD'];
 
-  // Define 7 different sparkle layouts with 3 stars each
+  // Define 10 different sparkle layouts with 3 stars each
   const sparkleLayouts: SparkleLayout[][] = [
     // Layout 1 - Close triangle
     [
@@ -64,6 +64,24 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
       { top: '-8px', left: '-6px', size: 14, delay: '150ms' },
       { bottom: '-10px', left: '-8px', size: 6, delay: '120ms' },
       { bottom: '-6px', right: '-12px', size: 10, delay: '170ms' }
+    ],
+    // Layout 8 - Scattered wide
+    [
+      { top: '-12px', right: '-2px', size: 8, delay: '140ms' },
+      { top: '30%', left: '-16px', transform: 'translateY(-50%)', size: 12, delay: '110ms' },
+      { bottom: '-14px', right: '-4px', size: 10, delay: '180ms' }
+    ],
+    // Layout 9 - Top heavy
+    [
+      { top: '-10px', left: '-2px', size: 12, delay: '125ms' },
+      { top: '-6px', right: '-14px', size: 14, delay: '160ms' },
+      { top: '-14px', left: '50%', transform: 'translateX(-50%)', size: 8, delay: '145ms' }
+    ],
+    // Layout 10 - Bottom arc
+    [
+      { bottom: '-8px', left: '-10px', size: 10, delay: '135ms' },
+      { bottom: '-12px', left: '50%', transform: 'translateX(-50%)', size: 12, delay: '165ms' },
+      { bottom: '-6px', right: '-8px', size: 14, delay: '115ms' }
     ]
   ];
 
