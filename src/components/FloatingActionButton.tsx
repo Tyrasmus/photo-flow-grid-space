@@ -46,99 +46,81 @@ const FloatingActionButton = ({
   if (isMenuOpen) {
     return (
       <div className={`fixed bottom-6 right-6 z-10 ${className}`} ref={menuRef}>
-        <div className="relative w-96 h-[500px]">
-          {/* SVG squircle background for the menu */}
-          <svg 
-            className="absolute inset-0 w-full h-full drop-shadow-lg" 
-            viewBox="0 0 384 500" 
-            fill="none"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {/* Menu squircle path - no border, just white fill */}
-            <path
-              d="M192 20C260 20 340 20 354 34C368 48 368 128 368 250C368 372 368 452 354 466C340 480 260 480 192 480C124 480 44 480 30 466C16 452 16 372 16 250C16 128 16 48 30 34C44 20 124 20 192 20Z"
-              fill="white"
-              className="transition-colors duration-200"
-            />
-          </svg>
-          
-          {/* Menu content positioned over the SVG */}
-          <div className="absolute inset-0 flex flex-col p-0">
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 pb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-sm"></div>
-                </div>
-                <h2 className="text-sm font-semibold text-gray-900">Rocket Manager</h2>
+        <div className="w-80 h-[450px] bg-white rounded-3xl shadow-lg border border-gray-200 flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-4 h-4 bg-white rounded-sm"></div>
               </div>
-              <div className="flex gap-2">
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </Button>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
-                  onClick={handleCloseMenu}
-                >
-                  <X className="w-5 h-5" />
-                </Button>
-              </div>
+              <h2 className="text-sm font-semibold text-gray-900">Rocket Manager</h2>
             </div>
-
-            {/* Content Area */}
-            <div className="flex-1 flex flex-col px-6 min-h-0">
-              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                Here are some ways I can help you with your launch plan.
-              </p>
-
-              {/* Prompt Pills */}
-              <div className="space-y-3 flex-1">
-                <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
-                  <span className="text-gray-700">Add a </span>
-                  <span className="text-purple-600 font-medium">new goal</span>
-                  <span className="text-gray-700"> and suggest tasks</span>
-                </button>
-
-                <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
-                  <span className="text-gray-700">What should I </span>
-                  <span className="text-purple-600 font-medium">work on today?</span>
-                </button>
-
-                <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
-                  <span className="text-gray-700">What are the </span>
-                  <span className="text-purple-600 font-medium">next steps?</span>
-                </button>
-              </div>
+            <div className="flex gap-2">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200"
+                onClick={handleCloseMenu}
+              >
+                <X className="w-5 h-5" />
+              </Button>
             </div>
+          </div>
 
-            {/* Input Section - Fixed at bottom */}
-            <div className="px-6 pb-6 pt-4 flex-shrink-0">
-              <div className="relative">
-                <input 
-                  type="text" 
-                  placeholder="What can I help you with?"
-                  className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200 text-sm"
-                />
-                <Button 
-                  size="icon" 
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-transparent hover:bg-gray-200 text-gray-400"
-                  variant="ghost"
-                >
-                  <Send className="w-4 h-4" />
-                </Button>
-              </div>
-              
-              <button className="flex items-center gap-2 mt-3 text-sm text-gray-500 hover:text-gray-700 transition-colors">
-                <Paperclip className="w-4 h-4" />
-                Knowledge sources
+          {/* Content Area */}
+          <div className="flex-1 flex flex-col px-6 min-h-0">
+            <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+              Here are some ways I can help you with your launch plan.
+            </p>
+
+            {/* Prompt Pills */}
+            <div className="space-y-3 flex-1">
+              <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
+                <span className="text-gray-700">Add a </span>
+                <span className="text-purple-600 font-medium">new goal</span>
+                <span className="text-gray-700"> and suggest tasks</span>
+              </button>
+
+              <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
+                <span className="text-gray-700">What should I </span>
+                <span className="text-purple-600 font-medium">work on today?</span>
+              </button>
+
+              <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
+                <span className="text-gray-700">What are the </span>
+                <span className="text-purple-600 font-medium">next steps?</span>
               </button>
             </div>
+          </div>
+
+          {/* Input Section - Fixed at bottom */}
+          <div className="px-6 pb-6 pt-4 flex-shrink-0">
+            <div className="relative">
+              <input 
+                type="text" 
+                placeholder="What can I help you with?"
+                className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200 text-sm"
+              />
+              <Button 
+                size="icon" 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-transparent hover:bg-gray-200 text-gray-400"
+                variant="ghost"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+            
+            <button className="flex items-center gap-2 mt-3 text-sm text-gray-500 hover:text-gray-700 transition-colors">
+              <Paperclip className="w-4 h-4" />
+              Knowledge sources
+            </button>
           </div>
         </div>
       </div>
