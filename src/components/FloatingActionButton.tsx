@@ -22,45 +22,45 @@ const FloatingActionButton = ({
   const sparkleLayouts = [
     // Layout 1 - Close triangle
     [
-      { top: '-6px', right: '-6px', size: 12, delay: '25ms' },
-      { top: '-8px', left: '-4px', size: 8, delay: '75ms' },
-      { bottom: '-6px', right: '-8px', size: 10, delay: '50ms' }
+      { top: '-6px', right: '-6px', size: 12, delay: '100ms' },
+      { top: '-8px', left: '-4px', size: 8, delay: '150ms' },
+      { bottom: '-6px', right: '-8px', size: 10, delay: '125ms' }
     ],
     // Layout 2 - Side emphasis
     [
-      { top: '-10px', right: '-10px', size: 10, delay: '40ms' },
-      { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 14, delay: '90ms' },
-      { top: '50%', right: '-14px', transform: 'translateY(-50%)', size: 6, delay: '70ms' }
+      { top: '-10px', right: '-10px', size: 10, delay: '120ms' },
+      { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 14, delay: '170ms' },
+      { top: '50%', right: '-14px', transform: 'translateY(-50%)', size: 6, delay: '145ms' }
     ],
     // Layout 3 - Asymmetric cluster
     [
-      { top: '-4px', right: '-12px', size: 14, delay: '35ms' },
-      { top: '-10px', left: '-8px', size: 6, delay: '85ms' },
-      { bottom: '-8px', right: '-6px', size: 12, delay: '45ms' }
+      { top: '-4px', right: '-12px', size: 14, delay: '110ms' },
+      { top: '-10px', left: '-8px', size: 6, delay: '160ms' },
+      { bottom: '-8px', right: '-6px', size: 12, delay: '135ms' }
     ],
     // Layout 4 - Diagonal line
     [
-      { top: '-6px', right: '-8px', size: 8, delay: '50ms' },
-      { top: '40%', left: '-12px', size: 12, delay: '30ms' },
-      { bottom: '-4px', right: '-10px', size: 10, delay: '90ms' }
+      { top: '-6px', right: '-8px', size: 8, delay: '130ms' },
+      { top: '40%', left: '-12px', size: 12, delay: '105ms' },
+      { bottom: '-4px', right: '-10px', size: 10, delay: '165ms' }
     ],
     // Layout 5 - Vertical emphasis
     [
-      { top: '-8px', right: '-14px', size: 12, delay: '45ms' },
-      { top: '-14px', left: '-8px', size: 10, delay: '25ms' },
-      { bottom: '-12px', right: '-10px', size: 14, delay: '85ms' }
+      { top: '-8px', right: '-14px', size: 12, delay: '140ms' },
+      { top: '-14px', left: '-8px', size: 10, delay: '115ms' },
+      { bottom: '-12px', right: '-10px', size: 14, delay: '175ms' }
     ],
     // Layout 6 - Horizontal spread
     [
-      { top: '50%', left: '-10px', transform: 'translateY(-50%)', size: 8, delay: '65ms' },
-      { top: '50%', right: '-12px', transform: 'translateY(-50%)', size: 12, delay: '105ms' },
-      { top: '-6px', right: '-6px', size: 10, delay: '35ms' }
+      { top: '50%', left: '-10px', transform: 'translateY(-50%)', size: 8, delay: '155ms' },
+      { top: '50%', right: '-12px', transform: 'translateY(-50%)', size: 12, delay: '185ms' },
+      { top: '-6px', right: '-6px', size: 10, delay: '125ms' }
     ],
     // Layout 7 - Corner focus
     [
-      { top: '-8px', left: '-6px', size: 14, delay: '60ms' },
-      { bottom: '-10px', left: '-8px', size: 6, delay: '30ms' },
-      { bottom: '-6px', right: '-12px', size: 10, delay: '80ms' }
+      { top: '-8px', left: '-6px', size: 14, delay: '150ms' },
+      { bottom: '-10px', left: '-8px', size: 6, delay: '120ms' },
+      { bottom: '-6px', right: '-12px', size: 10, delay: '170ms' }
     ]
   ];
 
@@ -192,8 +192,8 @@ const FloatingActionButton = ({
           {sparkleLayouts[currentLayout].map((sparkle, index) => (
             <Sparkle 
               key={index}
-              className={`absolute text-white transition-all duration-300 ${
-                isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+              className={`absolute text-white transition-opacity duration-500 ${
+                isHovered ? 'opacity-100' : 'opacity-0'
               }`}
               style={{
                 top: sparkle.top,
