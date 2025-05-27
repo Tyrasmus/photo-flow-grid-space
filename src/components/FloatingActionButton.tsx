@@ -1,4 +1,5 @@
 
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
@@ -241,7 +242,7 @@ const FloatingActionButton = ({
           {sparkleLayouts[currentLayout].map((sparkle, index) => (
             <Sparkle 
               key={index}
-              className={`absolute text-white transition-opacity duration-[800ms] ease-in-out`}
+              className={`absolute text-white transition-opacity duration-[2000ms] ease-in-out`}
               style={{
                 top: sparkle.top,
                 right: sparkle.right,
@@ -332,3 +333,4 @@ const FloatingActionButton = ({
 };
 
 export default FloatingActionButton;
+
