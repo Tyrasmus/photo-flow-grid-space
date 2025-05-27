@@ -18,6 +18,9 @@ interface SparkleAnimationProps {
 }
 
 const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) => {
+  // Gradient colors from the FAB stroke outline
+  const gradientColors = ['#E60FEF', '#9D29B0', '#494CD8', '#3EC5FD'];
+
   // Define 7 different sparkle layouts with 3 stars each
   const sparkleLayouts: SparkleLayout[][] = [
     // Layout 1 - Close triangle
@@ -69,7 +72,7 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
       {sparkleLayouts[currentLayout].map((sparkle, index) => (
         <Sparkle 
           key={index}
-          className={`absolute text-white transition-opacity duration-500 ${
+          className={`absolute transition-opacity duration-500 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
@@ -78,11 +81,12 @@ const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) =
             bottom: sparkle.bottom,
             left: sparkle.left,
             transform: sparkle.transform,
-            transitionDelay: isHovered ? sparkle.delay : '0ms'
+            transitionDelay: isHovered ? sparkle.delay : '0ms',
+            color: gradientColors[index % gradientColors.length]
           }}
           size={sparkle.size}
           strokeWidth={2}
-          fill="white"
+          fill={gradientColors[index % gradientColors.length]}
         />
       ))}
     </div>
