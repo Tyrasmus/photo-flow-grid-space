@@ -130,6 +130,40 @@ const FloatingActionButton = ({
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
+        {/* Sparkles around the FAB */}
+        <div className={`absolute inset-0 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Sparkle 1 - top right */}
+          <Sparkle 
+            className="absolute -top-2 -right-2 text-white" 
+            size={12}
+            strokeWidth={2}
+          />
+          {/* Sparkle 2 - top left */}
+          <Sparkle 
+            className="absolute -top-3 -left-1 text-white" 
+            size={8}
+            strokeWidth={2}
+          />
+          {/* Sparkle 3 - bottom right */}
+          <Sparkle 
+            className="absolute -bottom-2 -right-3 text-white" 
+            size={10}
+            strokeWidth={2}
+          />
+          {/* Sparkle 4 - left middle */}
+          <Sparkle 
+            className="absolute top-1/2 -left-3 -translate-y-1/2 text-white" 
+            size={6}
+            strokeWidth={2}
+          />
+          {/* Sparkle 5 - right middle */}
+          <Sparkle 
+            className="absolute top-1/2 -right-4 -translate-y-1/2 text-white" 
+            size={14}
+            strokeWidth={2}
+          />
+        </div>
+
         {/* SVG squircle background with animated gradient transition */}
         <svg 
           className="absolute inset-0 w-full h-full drop-shadow-lg" 
@@ -170,7 +204,7 @@ const FloatingActionButton = ({
           />
         </svg>
         
-        {/* Button content with icon morphing */}
+        {/* Button content with rocket that fills with gradient on hover */}
         <Button 
           className="absolute inset-0 flex items-center justify-center bg-transparent hover:bg-transparent"
           style={{ width: "67px", height: "67px" }}
@@ -180,20 +214,24 @@ const FloatingActionButton = ({
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="relative w-7 h-7">
+          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rocketGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#E60FEF" />
+                <stop offset="33%" stopColor="#9D29B0" />
+                <stop offset="67%" stopColor="#494CD8" />
+                <stop offset="100%" stopColor="#3EC5FD" />
+              </linearGradient>
+            </defs>
             <Rocket 
-              className={`absolute inset-0 text-gray-600 transition-all duration-300 ease-in-out ${
-                isHovered ? 'opacity-0 scale-75 rotate-12' : 'opacity-100 scale-100 rotate-0'
-              }`} 
-              strokeWidth={3} 
-            />
-            <Sparkle 
-              className={`absolute inset-0 text-gray-600 transition-all duration-300 ease-in-out ${
-                isHovered ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-75 rotate-12'
-              }`} 
+              className={`transition-all duration-300 ease-in-out ${
+                isHovered ? 'text-transparent' : 'text-gray-600'
+              }`}
               strokeWidth={3}
+              fill={isHovered ? 'url(#rocketGradient)' : 'none'}
+              stroke={isHovered ? 'url(#rocketGradient)' : 'currentColor'}
             />
-          </div>
+          </svg>
         </Button>
       </div>
     </div>
