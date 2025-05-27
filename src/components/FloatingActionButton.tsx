@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle, Rocket, Sparkle } from 'lucide-react';
@@ -235,12 +236,12 @@ const FloatingActionButton = ({
   return (
     <div className={`fixed bottom-6 right-6 z-10 ${className}`}>
       <div className="relative h-[67px] w-[67px] group">
-        {/* Sparkles around the FAB with current layout and independent twinkling */}
+        {/* Sparkles around the FAB with current layout and smooth opacity transitions */}
         <div className="absolute inset-0">
           {sparkleLayouts[currentLayout].map((sparkle, index) => (
             <Sparkle 
               key={index}
-              className={`absolute text-white transition-all duration-[1500ms] ease-in-out`}
+              className={`absolute text-white transition-opacity duration-[800ms] ease-in-out`}
               style={{
                 top: sparkle.top,
                 right: sparkle.right,
@@ -248,7 +249,6 @@ const FloatingActionButton = ({
                 left: sparkle.left,
                 transform: sparkle.transform,
                 opacity: isHovered ? sparkleOpacities[index] / 100 : 0,
-                transitionDelay: isHovered ? sparkle.delay : '0ms'
               }}
               size={sparkle.size}
               strokeWidth={2}
