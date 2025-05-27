@@ -138,7 +138,7 @@ const FloatingActionButton = ({
             className={`absolute -top-2 -right-2 text-white transition-all duration-300 ${
               isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
             }`}
-            style={{ transitionDelay: isHovered ? '0ms' : '0ms' }}
+            style={{ transitionDelay: isHovered ? '25ms' : '0ms' }}
             size={12}
             strokeWidth={2}
             fill="white"
@@ -148,7 +148,7 @@ const FloatingActionButton = ({
             className={`absolute -top-3 -left-1 text-white transition-all duration-300 ${
               isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
             }`}
-            style={{ transitionDelay: isHovered ? '100ms' : '0ms' }}
+            style={{ transitionDelay: isHovered ? '75ms' : '0ms' }}
             size={8}
             strokeWidth={2}
             fill="white"
@@ -158,7 +158,7 @@ const FloatingActionButton = ({
             className={`absolute -bottom-2 -right-3 text-white transition-all duration-300 ${
               isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
             }`}
-            style={{ transitionDelay: isHovered ? '200ms' : '0ms' }}
+            style={{ transitionDelay: isHovered ? '50ms' : '0ms' }}
             size={10}
             strokeWidth={2}
             fill="white"
@@ -168,7 +168,7 @@ const FloatingActionButton = ({
             className={`absolute top-1/2 -left-3 -translate-y-1/2 text-white transition-all duration-300 ${
               isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
             }`}
-            style={{ transitionDelay: isHovered ? '300ms' : '0ms' }}
+            style={{ transitionDelay: isHovered ? '100ms' : '0ms' }}
             size={6}
             strokeWidth={2}
             fill="white"
@@ -178,7 +178,7 @@ const FloatingActionButton = ({
             className={`absolute top-1/2 -right-4 -translate-y-1/2 text-white transition-all duration-300 ${
               isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
             }`}
-            style={{ transitionDelay: isHovered ? '400ms' : '0ms' }}
+            style={{ transitionDelay: isHovered ? '80ms' : '0ms' }}
             size={14}
             strokeWidth={2}
             fill="white"
