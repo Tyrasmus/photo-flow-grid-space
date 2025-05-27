@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
@@ -52,7 +53,7 @@ const FloatingActionButton = ({
               <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-sm"></div>
               </div>
-              <h2 className="text-lg font-semibold text-gray-900">Rocket Manager</h2>
+              <h2 className="text-sm font-semibold text-gray-900">Rocket Manager</h2>
             </div>
             <div className="flex gap-2">
               <Button 
@@ -75,23 +76,23 @@ const FloatingActionButton = ({
 
           {/* Content */}
           <div className="flex-1 px-6 pb-4">
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed text-sm">
               Here are some ways I can help you with your launch plan.
             </p>
 
             <div className="space-y-3 mb-6">
-              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors">
+              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors text-sm">
                 <span className="text-gray-700">Add a </span>
                 <span className="text-purple-600 font-medium">new goal</span>
                 <span className="text-gray-700"> and suggest tasks</span>
               </button>
 
-              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors">
+              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors text-sm">
                 <span className="text-gray-700">What should I </span>
                 <span className="text-purple-600 font-medium">work on today?</span>
               </button>
 
-              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors">
+              <button className="w-full text-left p-4 rounded-2xl border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors text-sm">
                 <span className="text-gray-700">What are the </span>
                 <span className="text-purple-600 font-medium">next steps?</span>
               </button>
@@ -104,7 +105,7 @@ const FloatingActionButton = ({
               <input 
                 type="text" 
                 placeholder="What can I help you with?"
-                className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200"
+                className="w-full bg-gray-100 rounded-2xl pl-4 pr-12 py-3 text-gray-600 placeholder-gray-400 border-none outline-none focus:ring-2 focus:ring-purple-200 text-sm"
               />
               <Button 
                 size="icon" 
