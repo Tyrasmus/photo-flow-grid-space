@@ -38,7 +38,10 @@ const FloatingActionMenu = ({
   }
 
   return (
-    <div className={`fixed bottom-6 right-6 z-10 ${className}`} ref={menuRef}>
+    <div 
+      className={`fixed bottom-6 right-6 z-10 animate-fade-in ${className}`} 
+      ref={menuRef}
+    >
       <div className="w-80 h-[450px] bg-white rounded-3xl shadow-lg border border-gray-200 flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 pb-4">
