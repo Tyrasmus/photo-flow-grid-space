@@ -85,8 +85,8 @@ const FloatingActionMenu = ({
             </button>
 
             <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
-              <span className="text-gray-700">What should I </span>
-              <span className="text-purple-600 font-medium">work on today?</span>
+              <span className="text-gray-700">What should </span>
+              <span className="text-purple-600 font-medium">I work on today?</span>
             </button>
 
             <button className="inline-block text-left px-4 py-2.5 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm h-10 flex items-center">
