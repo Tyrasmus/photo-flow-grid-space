@@ -59,7 +59,7 @@ const FloatingActionButton = ({
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="w-10 h-10 flex items-center justify-center">
+          <div className="w-14 h-14 flex items-center justify-center">
             <RocketIcon isHovered={isHovered} />
           </div>
         </Button>
