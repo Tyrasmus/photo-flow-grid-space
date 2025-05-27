@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { LucideIcon, X, Send, Paperclip, MessageCircle } from 'lucide-react';
@@ -80,18 +81,18 @@ const FloatingActionButton = ({
             </p>
 
             <div className="space-y-3 mb-6">
-              <button className="inline-block text-left px-4 py-4 rounded-2xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-sm">
+              <button className="inline-block text-left px-4 py-4 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm">
                 <span className="text-gray-700">Add a </span>
                 <span className="text-purple-600 font-medium">new goal</span>
                 <span className="text-gray-700"> and suggest tasks</span>
               </button>
 
-              <button className="inline-block text-left px-4 py-4 rounded-2xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-sm">
+              <button className="inline-block text-left px-4 py-4 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm">
                 <span className="text-gray-700">What should I </span>
                 <span className="text-purple-600 font-medium">work on today?</span>
               </button>
 
-              <button className="inline-block text-left px-4 py-4 rounded-2xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-sm">
+              <button className="inline-block text-left px-4 py-4 rounded-2xl border-2 border-purple-600 bg-white hover:bg-gray-50 transition-colors text-sm">
                 <span className="text-gray-700">What are the </span>
                 <span className="text-purple-600 font-medium">next steps?</span>
               </button>
