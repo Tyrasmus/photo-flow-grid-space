@@ -1,16 +1,5 @@
 
 import React from 'react';
-import { Sparkle } from 'lucide-react';
-
-interface SparkleLayout {
-  top?: string;
-  right?: string;
-  bottom?: string;
-  left?: string;
-  transform?: string;
-  size: number;
-  delay: string;
-}
 
 interface SparkleAnimationProps {
   isHovered: boolean;
@@ -18,97 +7,109 @@ interface SparkleAnimationProps {
 }
 
 const SparkleAnimation = ({ isHovered, currentLayout }: SparkleAnimationProps) => {
-  // Gradient colors from the FAB stroke outline
-  const gradientColors = ['#E60FEF', '#9D29B0', '#494CD8', '#3EC5FD'];
-
-  // Define 10 different sparkle layouts with 3 stars each
-  const sparkleLayouts: SparkleLayout[][] = [
-    // Layout 1 - Close triangle
+  // 10 different sparkle layouts for variety
+  const sparkleLayouts = [
+    // Layout 0: Classic cross pattern
     [
-      { top: '-6px', right: '-6px', size: 12, delay: '100ms' },
-      { top: '-8px', left: '-4px', size: 8, delay: '150ms' },
-      { bottom: '-6px', right: '-8px', size: 10, delay: '125ms' }
+      { top: '10%', left: '50%', delay: 0 },
+      { top: '50%', left: '85%', delay: 100 },
+      { top: '90%', left: '50%', delay: 200 },
+      { top: '50%', left: '15%', delay: 300 },
     ],
-    // Layout 2 - Side emphasis
+    // Layout 1: Diamond pattern
     [
-      { top: '-10px', right: '-10px', size: 10, delay: '120ms' },
-      { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 14, delay: '170ms' },
-      { top: '50%', right: '-14px', transform: 'translateY(-50%)', size: 6, delay: '145ms' }
+      { top: '20%', left: '20%', delay: 0 },
+      { top: '20%', left: '80%', delay: 150 },
+      { top: '80%', left: '80%', delay: 300 },
+      { top: '80%', left: '20%', delay: 450 },
     ],
-    // Layout 3 - Asymmetric cluster
+    // Layout 2: Circular arrangement
     [
-      { top: '-4px', right: '-12px', size: 14, delay: '110ms' },
-      { top: '-10px', left: '-8px', size: 6, delay: '160ms' },
-      { bottom: '-8px', right: '-6px', size: 12, delay: '135ms' }
+      { top: '15%', left: '50%', delay: 0 },
+      { top: '35%', left: '85%', delay: 100 },
+      { top: '65%', left: '85%', delay: 200 },
+      { top: '85%', left: '50%', delay: 300 },
+      { top: '65%', left: '15%', delay: 400 },
+      { top: '35%', left: '15%', delay: 500 },
     ],
-    // Layout 4 - Diagonal line
+    // Layout 3: Asymmetric scatter
     [
-      { top: '-6px', right: '-8px', size: 8, delay: '130ms' },
-      { top: '40%', left: '-12px', size: 12, delay: '105ms' },
-      { bottom: '-4px', right: '-10px', size: 10, delay: '165ms' }
+      { top: '25%', left: '30%', delay: 0 },
+      { top: '40%', left: '75%', delay: 120 },
+      { top: '70%', left: '25%', delay: 240 },
+      { top: '60%', left: '70%', delay: 360 },
+      { top: '30%', left: '60%', delay: 480 },
     ],
-    // Layout 5 - Vertical emphasis
+    // Layout 4: Star formation
     [
-      { top: '-8px', right: '-14px', size: 12, delay: '140ms' },
-      { top: '-14px', left: '-8px', size: 10, delay: '115ms' },
-      { bottom: '-12px', right: '-10px', size: 14, delay: '175ms' }
+      { top: '10%', left: '50%', delay: 0 },
+      { top: '30%', left: '75%', delay: 80 },
+      { top: '60%', left: '80%', delay: 160 },
+      { top: '85%', left: '60%', delay: 240 },
+      { top: '90%', left: '40%', delay: 320 },
+      { top: '85%', left: '20%', delay: 400 },
+      { top: '60%', left: '15%', delay: 480 },
+      { top: '30%', left: '25%', delay: 560 },
     ],
-    // Layout 6 - Horizontal spread
+    // Layout 5: Minimal corners
     [
-      { top: '50%', left: '-10px', transform: 'translateY(-50%)', size: 8, delay: '155ms' },
-      { top: '50%', right: '-12px', transform: 'translateY(-50%)', size: 12, delay: '185ms' },
-      { top: '-6px', right: '-6px', size: 10, delay: '125ms' }
+      { top: '15%', left: '15%', delay: 0 },
+      { top: '15%', left: '85%', delay: 200 },
+      { top: '85%', left: '85%', delay: 400 },
+      { top: '85%', left: '15%', delay: 600 },
     ],
-    // Layout 7 - Corner focus
+    // Layout 6: Vertical line
     [
-      { top: '-8px', left: '-6px', size: 14, delay: '150ms' },
-      { bottom: '-10px', left: '-8px', size: 6, delay: '120ms' },
-      { bottom: '-6px', right: '-12px', size: 10, delay: '170ms' }
+      { top: '20%', left: '50%', delay: 0 },
+      { top: '40%', left: '50%', delay: 100 },
+      { top: '60%', left: '50%', delay: 200 },
+      { top: '80%', left: '50%', delay: 300 },
     ],
-    // Layout 8 - Scattered wide
+    // Layout 7: Horizontal line
     [
-      { top: '-12px', right: '-2px', size: 8, delay: '140ms' },
-      { top: '30%', left: '-16px', transform: 'translateY(-50%)', size: 12, delay: '110ms' },
-      { bottom: '-14px', right: '-4px', size: 10, delay: '180ms' }
+      { top: '50%', left: '20%', delay: 0 },
+      { top: '50%', left: '40%', delay: 100 },
+      { top: '50%', left: '60%', delay: 200 },
+      { top: '50%', left: '80%', delay: 300 },
     ],
-    // Layout 9 - Top heavy
+    // Layout 8: Triangle
     [
-      { top: '-10px', left: '-2px', size: 12, delay: '125ms' },
-      { top: '-6px', right: '-14px', size: 14, delay: '160ms' },
-      { top: '-14px', left: '50%', transform: 'translateX(-50%)', size: 8, delay: '145ms' }
+      { top: '20%', left: '50%', delay: 0 },
+      { top: '75%', left: '25%', delay: 150 },
+      { top: '75%', left: '75%', delay: 300 },
     ],
-    // Layout 10 - Bottom arc
+    // Layout 9: Spiral-like
     [
-      { bottom: '-8px', left: '-10px', size: 10, delay: '135ms' },
-      { bottom: '-12px', left: '50%', transform: 'translateX(-50%)', size: 12, delay: '165ms' },
-      { bottom: '-6px', right: '-8px', size: 14, delay: '115ms' }
-    ]
+      { top: '25%', left: '50%', delay: 0 },
+      { top: '40%', left: '70%', delay: 80 },
+      { top: '60%', left: '70%', delay: 160 },
+      { top: '75%', left: '50%', delay: 240 },
+      { top: '60%', left: '30%', delay: 320 },
+      { top: '40%', left: '30%', delay: 400 },
+    ],
   ];
 
+  const currentSparkles = sparkleLayouts[currentLayout] || sparkleLayouts[0];
+
   return (
-    <div className="absolute inset-0">
-      {sparkleLayouts[currentLayout].map((sparkle, index) => (
-        <Sparkle 
-          key={index}
-          className={`absolute transition-all duration-500 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
+    <>
+      {currentSparkles.map((sparkle, index) => (
+        <div
+          key={`${currentLayout}-${index}`}
+          className={`absolute w-1 h-1 bg-white rounded-full transition-all duration-500 ease-out ${
+            isHovered 
+              ? 'opacity-100 scale-100' 
+              : 'opacity-0 scale-0'
           }`}
           style={{
             top: sparkle.top,
-            right: sparkle.right,
-            bottom: sparkle.bottom,
             left: sparkle.left,
-            transform: `${sparkle.transform || ''} ${isHovered ? 'rotate(25deg)' : 'rotate(0deg)'}`,
-            transitionDelay: isHovered ? sparkle.delay : '0ms',
-            transitionProperty: isHovered ? 'opacity, transform' : 'opacity',
-            color: gradientColors[index % gradientColors.length]
+            transitionDelay: `${sparkle.delay}ms`,
+            filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.8))',
           }}
-          size={sparkle.size}
-          strokeWidth={2}
-          fill={gradientColors[index % gradientColors.length]}
         />
       ))}
-    </div>
+    </>
   );
 };
 
