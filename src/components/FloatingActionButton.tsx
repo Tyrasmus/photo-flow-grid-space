@@ -18,63 +18,56 @@ const FloatingActionButton = ({
   const [currentLayout, setCurrentLayout] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Define 7 different sparkle layouts with 5 stars each
+  // Define 7 different sparkle layouts with 4 stars each
   const sparkleLayouts = [
-    // Layout 1 - Close triangle with paired star and fifth star
+    // Layout 1 - Close triangle with paired star
     [
       { top: '-6px', right: '-6px', size: 12, delay: '100ms' },
       { top: '-8px', left: '-4px', size: 8, delay: '150ms' },
       { bottom: '-6px', right: '-8px', size: 10, delay: '125ms' },
-      { top: '-2px', right: '-20px', size: 6, delay: '175ms' }, // Moved 3px further right
-      { bottom: '-10px', left: '-12px', size: 8, delay: '200ms' } // Fifth star
+      { top: '-2px', right: '-20px', size: 6, delay: '175ms' } // Moved 8px further right
     ],
-    // Layout 2 - Side emphasis with paired star and fifth star
+    // Layout 2 - Side emphasis with paired star
     [
       { top: '-10px', right: '-10px', size: 10, delay: '120ms' },
       { top: '50%', left: '-12px', transform: 'translateY(-50%)', size: 14, delay: '170ms' },
       { top: '50%', right: '-14px', transform: 'translateY(-50%)', size: 6, delay: '145ms' },
-      { top: '40%', left: '-20px', transform: 'translateY(-50%)', size: 8, delay: '190ms' }, // Moved 3px further left
-      { bottom: '-8px', right: '-16px', size: 6, delay: '215ms' } // Fifth star
+      { top: '40%', left: '-23px', transform: 'translateY(-50%)', size: 8, delay: '190ms' } // Moved 8px further left
     ],
-    // Layout 3 - Asymmetric cluster with paired star and fifth star
+    // Layout 3 - Asymmetric cluster with paired star
     [
       { top: '-4px', right: '-12px', size: 14, delay: '110ms' },
       { top: '-10px', left: '-8px', size: 6, delay: '160ms' },
       { bottom: '-8px', right: '-6px', size: 12, delay: '135ms' },
-      { bottom: '-4px', right: '-14px', size: 8, delay: '185ms' }, // Moved 3px further right
-      { top: '-12px', right: '-4px', size: 10, delay: '210ms' } // Fifth star
+      { bottom: '-4px', right: '-17px', size: 8, delay: '185ms' } // Moved 8px further right
     ],
-    // Layout 4 - Diagonal line with paired star and fifth star
+    // Layout 4 - Diagonal line with paired star
     [
       { top: '-6px', right: '-8px', size: 8, delay: '130ms' },
       { top: '40%', left: '-12px', size: 12, delay: '105ms' },
       { bottom: '-4px', right: '-10px', size: 10, delay: '165ms' },
-      { top: '-7px', right: '-16px', size: 6, delay: '180ms' }, // Moved 3px further right
-      { bottom: '-12px', left: '-6px', size: 8, delay: '205ms' } // Fifth star
+      { top: '-7px', right: '-19px', size: 6, delay: '180ms' } // Moved 8px further right
     ],
-    // Layout 5 - Vertical emphasis with paired star and fifth star
+    // Layout 5 - Vertical emphasis with paired star
     [
       { top: '-8px', right: '-14px', size: 12, delay: '140ms' },
       { top: '-14px', left: '-8px', size: 10, delay: '115ms' },
       { bottom: '-12px', right: '-10px', size: 14, delay: '175ms' },
-      { top: '-15px', left: '-16px', size: 6, delay: '195ms' }, // Moved 3px further left
-      { top: '50%', right: '-18px', transform: 'translateY(-50%)', size: 8, delay: '220ms' } // Fifth star
+      { top: '-15px', left: '-19px', size: 6, delay: '195ms' } // Moved 8px further left
     ],
-    // Layout 6 - Horizontal spread with paired star and fifth star
+    // Layout 6 - Horizontal spread with paired star
     [
       { top: '50%', left: '-10px', transform: 'translateY(-50%)', size: 8, delay: '155ms' },
       { top: '50%', right: '-12px', transform: 'translateY(-50%)', size: 12, delay: '185ms' },
       { top: '-6px', right: '-6px', size: 10, delay: '125ms' },
-      { top: '65%', right: '-20px', transform: 'translateY(-50%)', size: 6, delay: '205ms' }, // Moved 3px further right
-      { bottom: '-8px', left: '-14px', size: 10, delay: '230ms' } // Fifth star
+      { top: '65%', right: '-23px', transform: 'translateY(-50%)', size: 6, delay: '205ms' } // Moved 8px further right
     ],
-    // Layout 7 - Corner focus with paired star and fifth star
+    // Layout 7 - Corner focus with paired star
     [
       { top: '-8px', left: '-6px', size: 14, delay: '150ms' },
       { bottom: '-10px', left: '-8px', size: 6, delay: '120ms' },
       { bottom: '-6px', right: '-12px', size: 10, delay: '170ms' },
-      { top: '-9px', left: '-14px', size: 8, delay: '200ms' }, // Moved 3px further left
-      { top: '50%', left: '-16px', transform: 'translateY(-50%)', size: 6, delay: '225ms' } // Fifth star
+      { top: '-9px', left: '-17px', size: 8, delay: '200ms' } // Moved 8px further left
     ]
   ];
 
