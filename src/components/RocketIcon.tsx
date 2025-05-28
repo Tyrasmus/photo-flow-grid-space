@@ -14,7 +14,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
       case 'rocket1':
         return "/lovable-uploads/20c99586-43f7-4519-be47-d4db741f6478.png";
       case 'rocket2':
-        return "/lovable-uploads/49e52502-f53d-414a-9dff-4012214d7758.png"; // placeholder for rocket 2
+        return "/lovable-uploads/49585e68-8eb2-49cc-967a-1f806a6d66ed.png";
       default:
         return "/lovable-uploads/20c99586-43f7-4519-be47-d4db741f6478.png";
     }
@@ -24,7 +24,8 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
     <img 
       src={getRocketSrc()}
       alt="Rocket"
-      className="w-[35px] h-[35px] transition-all duration-300 ease-in-out"
+      style={{ width: '35px', height: '35px' }}
+      className="transition-all duration-300 ease-in-out"
     />
   );
 };
