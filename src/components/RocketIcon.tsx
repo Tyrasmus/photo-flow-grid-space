@@ -8,7 +8,7 @@ interface RocketIconProps {
 const RocketIcon = ({ isHovered }: RocketIconProps) => {
   return (
     <img 
-      src="/lovable-uploads/5014da4a-85e4-4f66-84ac-b3b98a089593.png"
+      src="/lovable-uploads/20c99586-43f7-4519-be47-d4db741f6478.png"
       alt="Rocket"
       className="w-[35px] h-[35px] transition-all duration-300 ease-in-out"
     />
