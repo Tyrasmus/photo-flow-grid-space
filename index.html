@@ -34,12 +34,10 @@
           // Convert query parameters back to path format
           if (queryParams && !queryParams.includes('=')) {
             // This is likely a converted path (e.g., "fab" from "?fab")
-            var newPath = '/' + queryParams.split('&').join('/');
-            console.log('index.html - Converting to path:', newPath);
+            var newPath = '/photo-flow-grid-space/' + queryParams.split('&').join('/');
+            console.log('index.html - Converting to new path:', newPath);
             
-            window.history.replaceState(null, null,
-              l.pathname + newPath + l.hash
-            );
+            window.history.replaceState(null, null, newPath + l.hash);
           }
         }
         
