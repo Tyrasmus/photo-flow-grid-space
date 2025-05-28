@@ -16,7 +16,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
       case 'rocket1':
         return `${basePath}/lovable-uploads/20c99586-43f7-4519-be47-d4db741f6478.png`;
       case 'rocket2':
-        return `${basePath}/lovable-uploads/34bf07e7-1429-42dd-b959-0952e6318180.png`;
+        return `${basePath}/lovable-uploads/dd8519e3-4492-4efb-a3e5-7fe993730cef.png`;
       default:
         return `${basePath}/lovable-uploads/20c99586-43f7-4519-be47-d4db741f6478.png`;
     }
