@@ -10,6 +10,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
   const { selectedRocket } = useRocketIcon();
   
   const getRocketSrc = () => {
+    // For GitHub Pages, we need to include the repository name in the path
     const basePath = import.meta.env.DEV ? '' : '/photo-flow-grid-space';
     switch (selectedRocket) {
       case 'rocket1':
@@ -23,6 +24,8 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
 
   console.log('RocketIcon - selectedRocket:', selectedRocket);
   console.log('RocketIcon - image path:', getRocketSrc());
+  console.log('RocketIcon - env.DEV:', import.meta.env.DEV);
+  console.log('RocketIcon - base URL:', import.meta.env.BASE_URL);
 
   return (
     <img 
@@ -33,6 +36,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
       onError={(e) => {
         console.error('Failed to load rocket image:', getRocketSrc());
         console.error('Error event:', e);
+        console.error('Current location:', window.location.href);
       }}
     />
   );

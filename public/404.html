@@ -11,20 +11,34 @@
     var pathSegmentsToKeep = 1;
 
     var l = window.location;
-    var segmentCount = l.pathname.split('/').length;
-    var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
-    redirectUrl += '/photo-flow-grid-space/';
+    var redirectPath = l.pathname.slice(1); // Remove leading slash
     
-    // Add the remaining path segments if there are any
-    if (segmentCount > pathSegmentsToKeep + 1) {
-      redirectUrl += l.pathname.split('/').slice(pathSegmentsToKeep + 1).join('/');
+    // If we're already on the correct base path, don't redirect
+    if (redirectPath.startsWith('photo-flow-grid-space')) {
+      // Extract the path after the repo name
+      var appPath = redirectPath.replace('photo-flow-grid-space', '');
+      if (appPath.startsWith('/')) {
+        appPath = appPath.slice(1);
+      }
+      
+      // Construct the final URL
+      var finalUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/photo-flow-grid-space/';
+      
+      if (appPath) {
+        finalUrl += '?' + appPath.split('/').join('&');
+      }
+      
+      finalUrl += l.search || '';
+      finalUrl += l.hash || '';
+      
+      window.location.replace(finalUrl);
+    } else {
+      // Default redirect to base
+      var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/photo-flow-grid-space/';
+      redirectUrl += l.search || '';
+      redirectUrl += l.hash || '';
+      window.location.replace(redirectUrl);
     }
-    
-    // Preserve query parameters and hash
-    redirectUrl += l.search || '';
-    redirectUrl += l.hash || '';
-    
-    document.write('<meta http-equiv="refresh" content="0;URL=' + redirectUrl + '">');
   </script>
 </head>
 <body>
