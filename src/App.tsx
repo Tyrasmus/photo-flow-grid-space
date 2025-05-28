@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 // Get the base URL from the environment to ensure consistent routing
 const getBasename = () => {
-  return import.meta.env.DEV ? '/' : '/photo-flow-grid-space/';
+  return import.meta.env.DEV ? '/' : '/photo-flow-grid-space';
 };
 
 const App = () => (
