@@ -24,6 +24,26 @@
       // https://github.com/rafgraph/spa-github-pages
       (function(l) {
         console.log('index.html - Original search:', l.search);
+        console.log('index.html - Original pathname:', l.pathname);
+        
+        // Handle query parameter routing (e.g., ?fab)
+        if (l.search) {
+          var queryParams = l.search.slice(1); // Remove the '?' 
+          console.log('index.html - Query params:', queryParams);
+          
+          // Convert query parameters back to path format
+          if (queryParams && !queryParams.includes('=')) {
+            // This is likely a converted path (e.g., "fab" from "?fab")
+            var newPath = '/' + queryParams.split('&').join('/');
+            console.log('index.html - Converting to path:', newPath);
+            
+            window.history.replaceState(null, null,
+              l.pathname + newPath + l.hash
+            );
+          }
+        }
+        
+        // Original GitHub Pages SPA routing logic
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
