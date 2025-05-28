@@ -10,7 +10,7 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
     <img 
       src="/lovable-uploads/5014da4a-85e4-4f66-84ac-b3b98a089593.png"
       alt="Rocket"
-      className="w-7 h-7 transition-all duration-300 ease-in-out"
+      className="w-[50px] h-[50px] transition-all duration-300 ease-in-out"
     />
   );
 };
