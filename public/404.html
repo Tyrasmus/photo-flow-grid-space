@@ -8,35 +8,38 @@
     // Single Page Apps for GitHub Pages
     // MIT License
     // https://github.com/rafgraph/spa-github-pages
-    var pathSegmentsToKeep = 1;
-
     var l = window.location;
     var redirectPath = l.pathname.slice(1); // Remove leading slash
     
-    // If we're already on the correct base path, don't redirect
+    console.log('404.html - Original pathname:', l.pathname);
+    console.log('404.html - Redirect path:', redirectPath);
+    
+    // If we're already on the correct base path, extract the app route
     if (redirectPath.startsWith('photo-flow-grid-space')) {
       // Extract the path after the repo name
-      var appPath = redirectPath.replace('photo-flow-grid-space', '');
-      if (appPath.startsWith('/')) {
-        appPath = appPath.slice(1);
-      }
+      var appPath = redirectPath.replace('photo-flow-grid-space/', '');
       
-      // Construct the final URL
+      console.log('404.html - App path extracted:', appPath);
+      
+      // Construct the final URL with proper query parameters for SPA routing
       var finalUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/photo-flow-grid-space/';
       
-      if (appPath) {
+      if (appPath && appPath !== '') {
+        // Convert path segments to query parameters for SPA routing
         finalUrl += '?' + appPath.split('/').join('&');
       }
       
       finalUrl += l.search || '';
       finalUrl += l.hash || '';
       
+      console.log('404.html - Final redirect URL:', finalUrl);
       window.location.replace(finalUrl);
     } else {
       // Default redirect to base
       var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/photo-flow-grid-space/';
       redirectUrl += l.search || '';
       redirectUrl += l.hash || '';
+      console.log('404.html - Default redirect URL:', redirectUrl);
       window.location.replace(redirectUrl);
     }
   </script>

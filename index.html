@@ -23,10 +23,12 @@
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
       (function(l) {
+        console.log('index.html - Original search:', l.search);
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
+          console.log('index.html - Decoded path:', decoded);
           window.history.replaceState(null, null,
               l.pathname.slice(0, -1) + decoded + l.hash
           );
