@@ -21,12 +21,19 @@ const RocketIcon = ({ isHovered }: RocketIconProps) => {
     }
   };
 
+  console.log('RocketIcon - selectedRocket:', selectedRocket);
+  console.log('RocketIcon - image path:', getRocketSrc());
+
   return (
     <img 
       src={getRocketSrc()}
       alt="Rocket"
       style={{ width: '35px', height: '35px' }}
       className="transition-all duration-300 ease-in-out"
+      onError={(e) => {
+        console.error('Failed to load rocket image:', getRocketSrc());
+        console.error('Error event:', e);
+      }}
     />
   );
 };
