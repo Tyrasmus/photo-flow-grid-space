@@ -1,5 +1,6 @@
 
 import FloatingActionWrapper from '../components/FloatingActionWrapper';
+import RocketSelector from '../components/RocketSelector';
 import { Rocket, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -26,7 +27,7 @@ const Fab = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Centered dropdown navigation */}
-      <div className="flex justify-center pt-8 pb-4">
+      <div className="flex justify-center items-center gap-4 pt-8 pb-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button 
@@ -52,6 +53,8 @@ const Fab = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        
+        <RocketSelector />
       </div>
 
       {/* Header */}
@@ -68,6 +71,7 @@ const Fab = () => {
         <div className="text-center text-black">
           <p className="text-lg mb-4">This page showcases the Floating Action Button.</p>
           <p className="text-gray-600">Click the rocket button in the bottom right to see it in action!</p>
+          <p className="text-gray-600 mt-2">Use the rocket selector above to choose between different rocket icons.</p>
         </div>
       </div>
 

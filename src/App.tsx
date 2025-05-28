@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RocketIconProvider } from "./contexts/RocketIconContext";
 import Index from "./pages/Index";
 import Fab from "./pages/Fab";
 import NotFound from "./pages/NotFound";
@@ -17,18 +18,20 @@ const getBasename = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename={getBasename()}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/fab" element={<Fab />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <RocketIconProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={getBasename()}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/fab" element={<Fab />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </RocketIconProvider>
   </QueryClientProvider>
 );
 
