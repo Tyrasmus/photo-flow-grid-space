@@ -78,7 +78,7 @@ const Index = () => {
         </div>
 
         {/* Content Area with Photo Grid and People Panel */}
-        <div className="flex gap-5">
+        <div className="flex gap-8">
           {/* Photo Grid Section */}
           <div className={`transition-all duration-300 ${isPeoplePanelOpen ? 'flex-1' : 'w-full'}`}>
             <PhotoGrid />
