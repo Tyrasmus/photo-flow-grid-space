@@ -56,13 +56,13 @@ const Index = () => {
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex gap-8 relative">
-          {/* Main content area - dynamic width only for lg+ */}
+          {/* Main content area - only lg+ should resize */}
           <div 
-            className="transition-all duration-500 ease-in-out w-full lg:w-auto"
+            className="transition-all duration-500 ease-in-out w-full"
             style={{
-              width: isPeoplePanelOpen ? 
-                'calc(100% - 320px - 2rem)' : // lg+ with panel open
-                '100%' // all other cases
+              width: window.innerWidth >= 1024 && isPeoplePanelOpen ? 
+                'calc(100% - 320px - 2rem)' : 
+                '100%'
             }}
           >
             {/* Header and Buttons Container */}
