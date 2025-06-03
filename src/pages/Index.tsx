@@ -88,7 +88,7 @@ const Index = () => {
         </div>
 
         {/* People Panel */}
-        <div className={`transition-all duration-300 bg-gray-800 border-l border-gray-700 ${
+        <div className={`transition-all duration-300 bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg ${
           isPeoplePanelOpen ? 'w-80 opacity-100' : 'w-0 opacity-0 overflow-hidden'
         }`}>
           {isPeoplePanelOpen && (
