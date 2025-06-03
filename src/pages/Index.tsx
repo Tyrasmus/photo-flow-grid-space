@@ -1,4 +1,3 @@
-
 import PhotoGrid from '../components/PhotoGrid';
 import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
@@ -88,17 +87,16 @@ const Index = () => {
             <PhotoGrid />
           </div>
 
-          {/* People Panel - Push behavior for lg and up */}
-          <div 
-            className={`hidden lg:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
-            }`}
-            style={{ width: '320px' }}
-          >
-            <div className="p-6 h-full">
-              <PeoplePanel />
+          {/* People Panel - Push behavior for lg and up, but visible */}
+          {isPeoplePanelOpen && (
+            <div 
+              className="hidden lg:block w-[320px] bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out"
+            >
+              <div className="p-6 h-full">
+                <PeoplePanel />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* People Panel - Overlay behavior for md and below */}
           <div 
