@@ -83,7 +83,7 @@ const Index = () => {
           <div 
             className="w-full xs:transition-all xs:duration-500 xs:ease-in-out"
             style={{
-              width: window.innerWidth >= 475 && isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%'
+              width: window.innerWidth >= 475 ? (isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%') : '100%'
             }}
           >
             <PhotoGrid />
