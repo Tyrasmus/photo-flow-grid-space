@@ -88,8 +88,10 @@ const Index = () => {
                 '100%'
             }}
           >
-            {/* Photo Grid Section */}
-            <PhotoGrid />
+            {/* Photo Grid Section - align right edge with buttons */}
+            <div className="pr-[52px] xs:pr-0">
+              <PhotoGrid />
+            </div>
           </div>
 
           {/* People Panel - Push behavior for lg+ only */}
