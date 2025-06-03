@@ -80,12 +80,12 @@ const Index = () => {
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex gap-8">
           {/* Photo Grid Section */}
-          <div className={`transition-all duration-300 ${isPeoplePanelOpen ? 'flex-1' : 'w-full'}`}>
+          <div className={`transition-all duration-500 ease-in-out ${isPeoplePanelOpen ? 'flex-1' : 'w-full'}`}>
             <PhotoGrid />
           </div>
 
           {/* People Panel */}
-          <div className={`transition-all duration-300 bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg ${
+          <div className={`transition-all duration-500 ease-in-out bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg ${
             isPeoplePanelOpen ? 'w-80 opacity-100' : 'w-0 opacity-0 overflow-hidden'
           }`}>
             {isPeoplePanelOpen && (
