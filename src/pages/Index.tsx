@@ -81,7 +81,7 @@ const Index = () => {
         <div className="flex gap-8 relative">
           {/* Photo Grid Section */}
           <div 
-            className="w-full md:transition-all md:duration-500 md:ease-in-out"
+            className="w-full transition-all duration-500 ease-in-out md:block"
             style={{
               width: window.innerWidth >= 768 ? (isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%') : '100%'
             }}
