@@ -54,6 +54,29 @@ const Index = () => {
 
       {/* Main Content Container */}
       <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
+        {/* Header and Buttons Container - Full width */}
+        <div className="flex justify-between items-center pb-3">
+          <h1 className="text-4xl font-bold text-white">
+            People
+          </h1>
+          
+          <div className="flex gap-2">
+            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
+              <GitMerge className="xs:mr-2" />
+              <span className="hidden xs:inline">Merge People</span>
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10"
+              onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
+            >
+              <Eye className="xs:mr-2" />
+              <span className="hidden xs:inline">Show/hide People</span>
+            </Button>
+          </div>
+        </div>
+
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex gap-8 relative">
           {/* Main content area - only lg+ should resize */}
@@ -65,29 +88,6 @@ const Index = () => {
                 '100%'
             }}
           >
-            {/* Header and Buttons Container */}
-            <div className="flex justify-between items-center pb-3">
-              <h1 className="text-4xl font-bold text-white">
-                People
-              </h1>
-              
-              <div className="flex gap-2">
-                <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
-                  <GitMerge className="xs:mr-2" />
-                  <span className="hidden xs:inline">Merge People</span>
-                </Button>
-                
-                <Button 
-                  variant="outline" 
-                  className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10"
-                  onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
-                >
-                  <Eye className="xs:mr-2" />
-                  <span className="hidden xs:inline">Show/hide People</span>
-                </Button>
-              </div>
-            </div>
-
             {/* Photo Grid Section */}
             <PhotoGrid />
           </div>
