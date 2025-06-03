@@ -97,7 +97,7 @@ const Index = () => {
             }`}
           >
             <div className="p-6 h-full">
-              <PeoplePanel />
+              <PeoplePanel isOpen={isPeoplePanelOpen} />
             </div>
           </div>
 
@@ -116,7 +116,7 @@ const Index = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 h-full">
-                <PeoplePanel />
+                <PeoplePanel isOpen={isPeoplePanelOpen} />
               </div>
             </div>
           </div>

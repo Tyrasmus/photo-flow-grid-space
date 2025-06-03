@@ -1,10 +1,32 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const PeoplePanel = () => {
+interface PeoplePanelProps {
+  isOpen?: boolean;
+}
+
+const PeoplePanel: React.FC<PeoplePanelProps> = ({ isOpen = true }) => {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      // Delay content fade-in to match pane animation duration (500ms)
+      const timer = setTimeout(() => {
+        setShowContent(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    } else {
+      setShowContent(false);
+    }
+  }, [isOpen]);
+
   return (
     <div className="h-full flex flex-col">
-      <div className="flex flex-col space-y-2 text-left">
+      <div 
+        className={`flex flex-col space-y-2 text-left transition-opacity duration-300 ease-in-out ${
+          showContent ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         <h2 className="text-lg font-semibold text-white">
           Example Side Panel
         </h2>
@@ -13,7 +35,11 @@ const PeoplePanel = () => {
         </p>
       </div>
       
-      <div className="flex-1 mt-6 space-y-4">
+      <div 
+        className={`flex-1 mt-6 space-y-4 transition-opacity duration-300 ease-in-out ${
+          showContent ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         <div className="space-y-3">
           <h3 className="text-base font-medium text-white">Panel Content</h3>
           
