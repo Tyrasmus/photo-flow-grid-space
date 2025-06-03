@@ -89,15 +89,35 @@ const Index = () => {
             <PhotoGrid />
           </div>
 
-          {/* People Panel */}
+          {/* People Panel - Push behavior for xs and up */}
           <div 
-            className={`absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
+            className={`hidden xs:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
               isPeoplePanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
             style={{ width: '320px' }}
           >
             <div className="p-6 h-full">
               <PeoplePanel />
+            </div>
+          </div>
+
+          {/* People Panel - Overlay behavior for smallest breakpoint */}
+          <div 
+            className={`xs:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
+              isPeoplePanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+            onClick={() => setIsPeoplePanelOpen(false)}
+          >
+            <div 
+              className={`absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 transition-all duration-500 ease-in-out ${
+                isPeoplePanelOpen ? 'translate-x-0' : 'translate-x-full'
+              }`}
+              style={{ width: '320px' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6 h-full">
+                <PeoplePanel />
+              </div>
             </div>
           </div>
         </div>
