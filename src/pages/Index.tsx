@@ -82,15 +82,15 @@ const Index = () => {
           {/* Photo Grid Section */}
           <div 
             className={`w-full transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'md:w-[calc(100%-352px)]' : 'w-full'
+              isPeoplePanelOpen ? 'lg:w-[calc(100%-352px)]' : 'w-full'
             }`}
           >
             <PhotoGrid />
           </div>
 
-          {/* People Panel - Push behavior for md and up */}
+          {/* People Panel - Push behavior for lg and up */}
           <div 
-            className={`hidden md:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
+            className={`hidden lg:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
               isPeoplePanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
             style={{ width: '320px' }}
@@ -100,9 +100,9 @@ const Index = () => {
             </div>
           </div>
 
-          {/* People Panel - Overlay behavior for sm and below */}
+          {/* People Panel - Overlay behavior for md and below */}
           <div 
-            className={`md:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
+            className={`lg:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
               isPeoplePanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
             onClick={() => setIsPeoplePanelOpen(false)}
