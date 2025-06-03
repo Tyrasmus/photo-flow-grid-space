@@ -1,18 +1,26 @@
 
 import PhotoGrid from '../components/PhotoGrid';
+import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
 import { Eye, GitMerge, ChevronDown } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Index = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isPeoplePanelOpen, setIsPeoplePanelOpen] = useState(false);
 
   const getCurrentPageName = () => {
     return location.pathname === '/' ? 'People' : 'FAB';
@@ -61,10 +69,18 @@ const Index = () => {
               <GitMerge className="xs:mr-2" />
               <span className="hidden xs:inline">Merge People</span>
             </Button>
-            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
-              <Eye className="xs:mr-2" />
-              <span className="hidden xs:inline">Show/hide People</span>
-            </Button>
+            
+            <Sheet open={isPeoplePanelOpen} onOpenChange={setIsPeoplePanelOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
+                  <Eye className="xs:mr-2" />
+                  <span className="hidden xs:inline">Show/hide People</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="bg-gray-800 text-white border-gray-700">
+                <PeoplePanel />
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
