@@ -11,11 +11,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 
 const Index = () => {
   const location = useLocation();
@@ -70,23 +65,36 @@ const Index = () => {
               <span className="hidden xs:inline">Merge People</span>
             </Button>
             
-            <Sheet open={isPeoplePanelOpen} onOpenChange={setIsPeoplePanelOpen}>
-              <SheetTrigger asChild>
-                <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
-                  <Eye className="xs:mr-2" />
-                  <span className="hidden xs:inline">Show/hide People</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="bg-gray-800 text-white border-gray-700">
-                <PeoplePanel />
-              </SheetContent>
-            </Sheet>
+            <Button 
+              variant="outline" 
+              className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10"
+              onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
+            >
+              <Eye className="xs:mr-2" />
+              <span className="hidden xs:inline">Show/hide People</span>
+            </Button>
           </div>
         </div>
       </div>
 
-      {/* Photo Grid Section */}
-      <PhotoGrid />
+      {/* Main Content Area with Photo Grid and People Panel */}
+      <div className="flex">
+        {/* Photo Grid Section */}
+        <div className={`transition-all duration-300 ${isPeoplePanelOpen ? 'flex-1 pr-5' : 'w-full'}`}>
+          <PhotoGrid />
+        </div>
+
+        {/* People Panel */}
+        <div className={`transition-all duration-300 bg-gray-800 border-l border-gray-700 ${
+          isPeoplePanelOpen ? 'w-80 opacity-100' : 'w-0 opacity-0 overflow-hidden'
+        }`}>
+          {isPeoplePanelOpen && (
+            <div className="p-6 h-full">
+              <PeoplePanel />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
