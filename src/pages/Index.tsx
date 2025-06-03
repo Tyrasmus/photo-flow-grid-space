@@ -79,23 +79,29 @@ const Index = () => {
 
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex gap-8 relative">
-          {/* Photo Grid Section */}
-          <div className="flex-1">
+          {/* Photo Grid Section - adjusts width for push behavior on md+ */}
+          <div 
+            className={`transition-all duration-500 ease-in-out ${
+              isPeoplePanelOpen 
+                ? 'w-full md:w-[calc(100%-352px)]' // Push behavior on md and up
+                : 'w-full'
+            }`}
+          >
             <PhotoGrid />
           </div>
 
-          {/* People Panel - Push behavior for lg and up */}
+          {/* People Panel - Push behavior for md and up */}
           {isPeoplePanelOpen && (
-            <div className="hidden lg:block w-[320px] bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out">
+            <div className="hidden md:block w-[320px] bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out">
               <div className="p-6 h-full">
                 <PeoplePanel />
               </div>
             </div>
           )}
 
-          {/* People Panel - Overlay behavior for md and below */}
+          {/* People Panel - Overlay behavior for sm and below */}
           <div 
-            className={`lg:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
+            className={`md:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
               isPeoplePanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
             onClick={() => setIsPeoplePanelOpen(false)}
