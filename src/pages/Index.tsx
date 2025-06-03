@@ -1,3 +1,4 @@
+
 import PhotoGrid from '../components/PhotoGrid';
 import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
@@ -79,19 +80,13 @@ const Index = () => {
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex gap-8 relative">
           {/* Photo Grid Section */}
-          <div 
-            className={`w-full transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'lg:w-[calc(100%-352px)]' : 'w-full'
-            }`}
-          >
+          <div className="flex-1">
             <PhotoGrid />
           </div>
 
-          {/* People Panel - Push behavior for lg and up, but visible */}
+          {/* People Panel - Push behavior for lg and up */}
           {isPeoplePanelOpen && (
-            <div 
-              className="hidden lg:block w-[320px] bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out"
-            >
+            <div className="hidden lg:block w-[320px] bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out">
               <div className="p-6 h-full">
                 <PeoplePanel />
               </div>
