@@ -78,21 +78,27 @@ const Index = () => {
         </div>
 
         {/* Content Area with Photo Grid and People Panel */}
-        <div className="flex gap-8">
+        <div className="flex gap-8 relative">
           {/* Photo Grid Section */}
-          <div className={`transition-all duration-500 ease-in-out ${isPeoplePanelOpen ? 'flex-1' : 'w-full'}`}>
+          <div 
+            className="transition-all duration-500 ease-in-out"
+            style={{
+              width: isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%'
+            }}
+          >
             <PhotoGrid />
           </div>
 
           {/* People Panel */}
-          <div className={`transition-all duration-500 ease-in-out bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg ${
-            isPeoplePanelOpen ? 'w-80 opacity-100' : 'w-0 opacity-0 overflow-hidden'
-          }`}>
-            {isPeoplePanelOpen && (
-              <div className="p-6 h-full">
-                <PeoplePanel />
-              </div>
-            )}
+          <div 
+            className={`absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
+              isPeoplePanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+            }`}
+            style={{ width: '320px' }}
+          >
+            <div className="p-6 h-full">
+              <PeoplePanel />
+            </div>
           </div>
         </div>
       </div>
