@@ -52,50 +52,48 @@ const Index = () => {
         </DropdownMenu>
       </div>
 
-      {/* Main Content Area with Header, Photo Grid and People Panel */}
-      <div className="flex">
-        {/* Main Content Section */}
-        <div className={`transition-all duration-300 ${isPeoplePanelOpen ? 'flex-1' : 'w-full'}`}>
-          {/* Header and Buttons Container */}
-          <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
-            <div className="flex justify-between items-center pb-3">
-              <h1 className="text-4xl font-bold text-white">
-                People
-              </h1>
-              
-              <div className="flex gap-2">
-                <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
-                  <GitMerge className="xs:mr-2" />
-                  <span className="hidden xs:inline">Merge People</span>
-                </Button>
-                
-                <Button 
-                  variant="outline" 
-                  className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10"
-                  onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
-                >
-                  <Eye className="xs:mr-2" />
-                  <span className="hidden xs:inline">Show/hide People</span>
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Photo Grid Section */}
-          <div className={`${isPeoplePanelOpen ? 'pr-5' : ''}`}>
-            <PhotoGrid />
+      {/* Main Content Container */}
+      <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
+        {/* Header and Buttons Container */}
+        <div className="flex justify-between items-center pb-3">
+          <h1 className="text-4xl font-bold text-white">
+            People
+          </h1>
+          
+          <div className="flex gap-2">
+            <Button variant="outline" className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10">
+              <GitMerge className="xs:mr-2" />
+              <span className="hidden xs:inline">Merge People</span>
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10"
+              onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
+            >
+              <Eye className="xs:mr-2" />
+              <span className="hidden xs:inline">Show/hide People</span>
+            </Button>
           </div>
         </div>
 
-        {/* People Panel */}
-        <div className={`transition-all duration-300 bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg ${
-          isPeoplePanelOpen ? 'w-80 opacity-100' : 'w-0 opacity-0 overflow-hidden'
-        }`}>
-          {isPeoplePanelOpen && (
-            <div className="p-6 h-full">
-              <PeoplePanel />
-            </div>
-          )}
+        {/* Content Area with Photo Grid and People Panel */}
+        <div className="flex gap-5">
+          {/* Photo Grid Section */}
+          <div className={`transition-all duration-300 ${isPeoplePanelOpen ? 'flex-1' : 'w-full'}`}>
+            <PhotoGrid />
+          </div>
+
+          {/* People Panel */}
+          <div className={`transition-all duration-300 bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg ${
+            isPeoplePanelOpen ? 'w-80 opacity-100' : 'w-0 opacity-0 overflow-hidden'
+          }`}>
+            {isPeoplePanelOpen && (
+              <div className="p-6 h-full">
+                <PeoplePanel />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
