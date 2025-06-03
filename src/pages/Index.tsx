@@ -79,22 +79,23 @@ const Index = () => {
 
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex gap-8 relative">
-          {/* Photo Grid Section */}
+          {/* Photo Grid Section - Push behavior for md+ */}
           <div 
-            className="w-full transition-all duration-500 ease-in-out md:block"
+            className={`transition-all duration-500 ease-in-out ${
+              isPeoplePanelOpen ? 'md:mr-8' : ''
+            }`}
             style={{
-              width: window.innerWidth >= 1024 ? (isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%') : '100%'
+              width: isPeoplePanelOpen ? 'calc(100% - 320px - 2rem)' : '100%'
             }}
           >
             <PhotoGrid />
           </div>
 
-          {/* People Panel - Push behavior for md and up */}
+          {/* People Panel - Push behavior for md+ */}
           <div 
-            className={`hidden md:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+            className={`hidden md:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
+              isPeoplePanelOpen ? 'opacity-100 w-80' : 'opacity-0 w-0 overflow-hidden'
             }`}
-            style={{ width: '320px' }}
           >
             <div className="p-6 h-full">
               <PeoplePanel />
