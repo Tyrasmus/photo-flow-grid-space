@@ -1,4 +1,3 @@
-
 import { Photo } from '@/components/PhotoCard';
 
 export const initialPhotos: Photo[] = [
@@ -108,6 +107,114 @@ export const initialPhotos: Photo[] = [
     width: 800,
     height: 800,
     name: 'Claire Wilson',
+    pinned: false
+  },
+  {
+    id: '13',
+    url: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=800&fit=crop',
+    alt: 'Portrait of young man with beard',
+    width: 800,
+    height: 800,
+    name: 'Ryan Garcia',
+    pinned: false
+  },
+  {
+    id: '14',
+    url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=800&fit=crop',
+    alt: 'Portrait of professional woman',
+    width: 800,
+    height: 800,
+    name: 'Isabella Davis',
+    pinned: false
+  },
+  {
+    id: '15',
+    url: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=800&h=800&fit=crop',
+    alt: 'Portrait of confident man',
+    width: 800,
+    height: 800,
+    name: 'Michael Brown',
+    pinned: false
+  },
+  {
+    id: '16',
+    url: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=800&h=800&fit=crop',
+    alt: 'Portrait of elegant woman',
+    width: 800,
+    height: 800,
+    name: 'Luna Valdez',
+    pinned: false
+  },
+  {
+    id: '17',
+    url: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop',
+    alt: 'Portrait of young professional',
+    width: 800,
+    height: 800,
+    name: 'Ethan Moore',
+    pinned: false
+  },
+  {
+    id: '18',
+    url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=800&fit=crop',
+    alt: 'Portrait of woman with long hair',
+    width: 800,
+    height: 800,
+    name: 'Maya Foster',
+    pinned: false
+  },
+  {
+    id: '19',
+    url: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&h=800&fit=crop',
+    alt: 'Portrait of man in casual wear',
+    width: 800,
+    height: 800,
+    name: 'Jacob Turner',
+    pinned: false
+  },
+  {
+    id: '20',
+    url: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=800&fit=crop',
+    alt: 'Portrait of young woman with smile',
+    width: 800,
+    height: 800,
+    name: 'Aria Collins',
+    pinned: false
+  },
+  {
+    id: '21',
+    url: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=800&fit=crop',
+    alt: 'Portrait of professional man',
+    width: 800,
+    height: 800,
+    name: 'Nathan Rivera',
+    pinned: false
+  },
+  {
+    id: '22',
+    url: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=800&fit=crop',
+    alt: 'Portrait of cheerful woman',
+    width: 800,
+    height: 800,
+    name: 'Grace Palmer',
+    pinned: false
+  },
+  {
+    id: '23',
+    url: 'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=800&h=800&fit=crop',
+    alt: 'Portrait of mature man',
+    width: 800,
+    height: 800,
+    name: 'Samuel Wright',
+    pinned: false
+  },
+  {
+    id: '24',
+    url: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=800&h=800&fit=crop',
+    alt: 'Portrait of stylish woman',
+    width: 800,
+    height: 800,
+    name: 'Victoria Stone',
     pinned: false
   }
 ];
