@@ -1,21 +1,20 @@
 
 import React from 'react';
-import { SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Users } from "lucide-react";
 
 const PeoplePanel = () => {
   return (
     <div className="h-full flex flex-col">
-      <SheetHeader>
-        <SheetTitle className="text-white flex items-center gap-2">
+      <div className="flex flex-col space-y-2 text-left">
+        <h2 className="text-lg font-semibold text-white flex items-center gap-2">
           <Users className="h-5 w-5" />
           People Management
-        </SheetTitle>
-        <SheetDescription className="text-gray-300">
+        </h2>
+        <p className="text-sm text-gray-300">
           Manage visibility and organization of people in your photo grid
-        </SheetDescription>
-      </SheetHeader>
+        </p>
+      </div>
       
       <div className="flex-1 mt-6 space-y-4">
         <div className="space-y-3">
