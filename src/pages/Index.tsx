@@ -81,17 +81,17 @@ const Index = () => {
         <div className="flex gap-8 relative">
           {/* Photo Grid Section */}
           <div 
-            className="w-full lg:transition-all lg:duration-500 lg:ease-in-out"
+            className="w-full md:transition-all md:duration-500 md:ease-in-out"
             style={{
-              width: window.innerWidth >= 1024 ? (isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%') : '100%'
+              width: window.innerWidth >= 768 ? (isPeoplePanelOpen ? 'calc(100% - 352px)' : '100%') : '100%'
             }}
           >
             <PhotoGrid />
           </div>
 
-          {/* People Panel - Push behavior for lg and up */}
+          {/* People Panel - Push behavior for md and up */}
           <div 
-            className={`hidden lg:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
+            className={`hidden md:block absolute right-0 top-0 h-full bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
               isPeoplePanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
             style={{ width: '320px' }}
@@ -101,9 +101,9 @@ const Index = () => {
             </div>
           </div>
 
-          {/* People Panel - Overlay behavior for md and below */}
+          {/* People Panel - Overlay behavior for sm and below */}
           <div 
-            className={`lg:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
+            className={`md:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
               isPeoplePanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
             onClick={() => setIsPeoplePanelOpen(false)}
