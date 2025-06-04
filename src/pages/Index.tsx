@@ -79,10 +79,10 @@ const Index = () => {
 
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex relative">
-          {/* Main content area - resizes to make room for panel at lg+ */}
+          {/* Main content area - resizes to make room for panel at md+ */}
           <div 
             className={`transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'lg:pr-[352px]' : ''
+              isPeoplePanelOpen ? 'md:pr-[352px]' : ''
             } w-full`}
           >
             {/* Photo Grid Section */}
@@ -91,9 +91,9 @@ const Index = () => {
             </div>
           </div>
 
-          {/* People Panel - Push behavior for lg+ only */}
+          {/* People Panel - Push behavior for md+ only */}
           <div 
-            className={`hidden lg:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out fixed right-0 ${
+            className={`hidden md:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out fixed right-0 ${
               isPeoplePanelOpen ? 'opacity-100 w-80 translate-x-0' : 'opacity-0 w-80 translate-x-full'
             }`}
             style={{ 
@@ -106,9 +106,9 @@ const Index = () => {
             </div>
           </div>
 
-          {/* People Panel - Overlay behavior for lg and below */}
+          {/* People Panel - Overlay behavior for md and below */}
           <div 
-            className={`lg:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
+            className={`md:hidden fixed inset-0 z-50 bg-black/50 transition-all duration-300 ease-in-out ${
               isPeoplePanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
             onClick={() => setIsPeoplePanelOpen(false)}
