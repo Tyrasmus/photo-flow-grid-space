@@ -1,3 +1,4 @@
+
 import PhotoGrid from '../components/PhotoGrid';
 import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
@@ -52,7 +53,7 @@ const Index = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
+      <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px] relative">
         {/* Header and Buttons Container - Full width */}
         <div className="flex justify-between items-center pb-3">
           <h1 className="text-4xl font-bold text-white">
@@ -90,13 +91,13 @@ const Index = () => {
             </div>
           </div>
 
-          {/* People Panel - Push behavior for md+ only */}
+          {/* People Panel - Push behavior for md+ only - positioned within main container */}
           <div 
-            className={`hidden md:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out fixed right-0 ${
+            className={`hidden md:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out absolute top-0 ${
               isPeoplePanelOpen ? 'opacity-100 w-80 translate-x-0' : 'opacity-0 w-80 translate-x-full'
             }`}
             style={{ 
-              right: isPeoplePanelOpen ? 'calc((100vw - 100%) / 2 + 2rem)' : 'calc((100vw - 100%) / 2 + 2rem)',
+              right: 0,
               height: 'calc(100vh - 200px)'
             }}
           >
