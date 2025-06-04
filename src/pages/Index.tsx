@@ -89,7 +89,7 @@ const Index = () => {
             }}
           >
             {/* Photo Grid Section */}
-            <div className="pr-[52px] xs:pr-0 lg:pr-0 2xl:pr-0">
+            <div>
               <PhotoGrid />
             </div>
           </div>
