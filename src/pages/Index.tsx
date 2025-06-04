@@ -53,7 +53,7 @@ const Index = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-[120px] 2xl:mx-[200px]">
+      <div className="mx-[12px] xs:mx-5 sm:mx-8 md:mx-12 lg:ml-20 lg:mr-0 xl:ml-[120px] xl:mr-0 2xl:ml-[200px] 2xl:mr-0">
         {/* Header and Buttons Container - Full width */}
         <div className="flex justify-between items-center pb-3">
           <h1 className="text-4xl font-bold text-white">
