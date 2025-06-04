@@ -79,14 +79,11 @@ const Index = () => {
 
         {/* Content Area with Photo Grid and People Panel */}
         <div className="flex relative">
-          {/* Main content area - only lg+ should resize */}
+          {/* Main content area - resizes to make room for panel at lg+ */}
           <div 
-            className="transition-all duration-500 ease-in-out w-full"
-            style={{
-              width: window.innerWidth >= 1024 && isPeoplePanelOpen ? 
-                'calc(100% - 320px - 2rem)' : 
-                '100%'
-            }}
+            className={`transition-all duration-500 ease-in-out ${
+              isPeoplePanelOpen ? 'lg:pr-[352px]' : ''
+            } w-full`}
           >
             {/* Photo Grid Section */}
             <div>
@@ -96,9 +93,13 @@ const Index = () => {
 
           {/* People Panel - Push behavior for lg+ only */}
           <div 
-            className={`hidden lg:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'opacity-100 w-80 ml-8' : 'opacity-0 w-0 overflow-hidden'
+            className={`hidden lg:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out fixed right-0 ${
+              isPeoplePanelOpen ? 'opacity-100 w-80 translate-x-0' : 'opacity-0 w-80 translate-x-full'
             }`}
+            style={{ 
+              right: isPeoplePanelOpen ? 'calc((100vw - 100%) / 2 + 2rem)' : 'calc((100vw - 100%) / 2 + 2rem)',
+              height: 'calc(100vh - 200px)'
+            }}
           >
             <div className="p-6 h-full">
               <PeoplePanel isOpen={isPeoplePanelOpen} />
