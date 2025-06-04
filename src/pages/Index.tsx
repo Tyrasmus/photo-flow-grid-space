@@ -78,7 +78,7 @@ const Index = () => {
         </div>
 
         {/* Content Area with Photo Grid and People Panel */}
-        <div className="flex gap-8 relative">
+        <div className="flex relative">
           {/* Main content area - only lg+ should resize */}
           <div 
             className="transition-all duration-500 ease-in-out w-full"
