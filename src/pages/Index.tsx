@@ -88,7 +88,7 @@ const Index = () => {
                 '100%'
             }}
           >
-            {/* Photo Grid Section - align right edge with buttons */}
+            {/* Photo Grid Section */}
             <div className="pr-[52px] xs:pr-0">
               <PhotoGrid />
             </div>
