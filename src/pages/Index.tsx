@@ -1,8 +1,7 @@
-
 import PhotoGrid from '../components/PhotoGrid';
 import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
-import { Eye, GitMerge, ChevronDown } from "lucide-react";
+import { PanelRight, GitMerge, ChevronDown } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -71,7 +70,7 @@ const Index = () => {
               className="rounded-full bg-gray-800/90 text-white hover:bg-gray-700 border-0 xs:px-4 w-10 h-10 xs:w-auto xs:h-10"
               onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
             >
-              <Eye className="xs:mr-2" />
+              <PanelRight className="xs:mr-2" />
               <span className="hidden xs:inline">Open pane</span>
             </Button>
           </div>
