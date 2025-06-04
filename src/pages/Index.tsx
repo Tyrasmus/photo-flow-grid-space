@@ -1,3 +1,4 @@
+
 import PhotoGrid from '../components/PhotoGrid';
 import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
@@ -92,11 +93,11 @@ const Index = () => {
 
           {/* People Panel - Push behavior for md+ only */}
           <div 
-            className={`hidden md:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out fixed right-0 ${
+            className={`hidden md:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out fixed ${
               isPeoplePanelOpen ? 'opacity-100 w-80 translate-x-0' : 'opacity-0 w-80 translate-x-full'
             }`}
             style={{ 
-              right: isPeoplePanelOpen ? 'calc((100vw - 100%) / 2 + 2rem)' : 'calc((100vw - 100%) / 2 + 2rem)',
+              right: isPeoplePanelOpen ? 'calc((100vw - 100%) / 2)' : 'calc((100vw - 100%) / 2)',
               height: 'calc(100vh - 200px)'
             }}
           >
