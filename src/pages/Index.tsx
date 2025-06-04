@@ -72,7 +72,7 @@ const Index = () => {
               onClick={() => setIsPeoplePanelOpen(!isPeoplePanelOpen)}
             >
               <Eye className="xs:mr-2" />
-              <span className="hidden xs:inline">Show/hide People</span>
+              <span className="hidden xs:inline">Open pane</span>
             </Button>
           </div>
         </div>
