@@ -96,7 +96,7 @@ const Index = () => {
               isPeoplePanelOpen ? 'opacity-100 w-80 translate-x-0' : 'opacity-0 w-80 translate-x-full'
             }`}
             style={{ 
-              right: isPeoplePanelOpen ? 'calc((100vw - 100%) / 2 + 2rem)' : 'calc((100vw - 100%) / 2 + 2rem)',
+              right: isPeoplePanelOpen ? 'calc((100vw - 100%) / 2 + 0.5rem)' : 'calc((100vw - 100%) / 2 + 0.5rem)',
               height: 'calc(100vh - 200px)'
             }}
           >
