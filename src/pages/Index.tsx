@@ -97,7 +97,7 @@ const Index = () => {
           {/* People Panel - Push behavior for lg+ only */}
           <div 
             className={`hidden lg:block bg-gray-800 border-l border-gray-700 my-5 rounded-l-lg transition-all duration-500 ease-in-out ${
-              isPeoplePanelOpen ? 'opacity-100 w-80' : 'opacity-0 w-0 overflow-hidden'
+              isPeoplePanelOpen ? 'opacity-100 w-80 ml-8' : 'opacity-0 w-0 overflow-hidden'
             }`}
           >
             <div className="p-6 h-full">
