@@ -1,3 +1,4 @@
+
 import PhotoGrid from '../components/PhotoGrid';
 import PeoplePanel from '../components/PeoplePanel';
 import { Button } from "@/components/ui/button";
@@ -88,7 +89,7 @@ const Index = () => {
             }}
           >
             {/* Photo Grid Section */}
-            <div className="pr-[52px] xs:pr-0 2xl:pr-0">
+            <div className="pr-[52px] xs:pr-0 lg:pr-0 2xl:pr-0">
               <PhotoGrid />
             </div>
           </div>
